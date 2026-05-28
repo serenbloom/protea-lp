@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>プライバシーポリシー | PROTEA</title>
+  <meta name="description" content="PROTEAのプライバシーポリシーページです。" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Noto+Sans+JP:wght@300;400;500&family=Noto+Serif+JP:wght@300;400&display=swap" rel="stylesheet" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Noto Sans JP', sans-serif;
+      font-weight: 300;
+      color: #1a1a18;
+      background: #FAFAF7;
+      line-height: 1.8;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { text-decoration: none; color: inherit; }
+
+    :root {
+      --green-deep:  #2B3D2C;
+      --green-mid:   #3D5C3E;
+      --cream:       #F5EDE3;
+      --cream-light: #FAF6F1;
+      --gold:        #C9A87A;
+      --gold-light:  #E8D4B5;
+      --text:        #1a1a18;
+      --text-mid:    #4A4A46;
+      --text-light:  #8A8A82;
+      --white:       #FFFFFF;
+      --border:      rgba(43,61,44,0.12);
+    }
+
+    /* HEADER */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      padding: 1.2rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: rgba(250, 250, 247, 0.95);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border);
+    }
+    .header-logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.6rem;
+      font-weight: 400;
+      letter-spacing: 0.25em;
+      color: var(--green-deep);
+    }
+    .header-back {
+      font-size: 0.78rem;
+      letter-spacing: 0.12em;
+      color: var(--text-mid);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: color 0.2s;
+    }
+    .header-back:hover { color: var(--green-deep); }
+    .header-back::before {
+      content: '←';
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1rem;
+    }
+
+    /* HERO */
+    .page-hero {
+      background: var(--cream-light);
+      border-bottom: 1px solid var(--border);
+      padding: 5rem 2rem 4rem;
+      text-align: center;
+    }
+    .page-label {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.72rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--gold);
+      display: block;
+      margin-bottom: 1rem;
+    }
+    .page-title {
+      font-family: 'Noto Serif JP', serif;
+      font-size: clamp(1.6rem, 3vw, 2.4rem);
+      font-weight: 300;
+      color: var(--green-deep);
+      margin-bottom: 1rem;
+    }
+    .page-date {
+      font-size: 0.78rem;
+      color: var(--text-light);
+      letter-spacing: 0.1em;
+    }
+
+    /* CONTENT */
+    .page-content {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 5rem 2rem 8rem;
+    }
+    .page-intro {
+      font-size: 0.88rem;
+      color: var(--text-mid);
+      line-height: 2.2;
+      padding: 2rem;
+      background: var(--cream-light);
+      border-left: 3px solid var(--gold-light);
+      margin-bottom: 3rem;
+    }
+    .policy-section {
+      margin-bottom: 3rem;
+      padding-bottom: 3rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .policy-section:last-child {
+      border-bottom: none;
+    }
+    .policy-section h2 {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 1rem;
+      font-weight: 400;
+      color: var(--green-deep);
+      margin-bottom: 1.2rem;
+      display: flex;
+      align-items: baseline;
+      gap: 1rem;
+    }
+    .policy-section h2::before {
+      content: attr(data-num);
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.4rem;
+      font-weight: 300;
+      color: var(--gold);
+      flex-shrink: 0;
+    }
+    .policy-section p {
+      font-size: 0.85rem;
+      color: var(--text-mid);
+      line-height: 2.2;
+      margin-bottom: 0.8rem;
+    }
+    .policy-section ul {
+      padding-left: 1.4rem;
+      margin: 0.6rem 0 0.8rem;
+    }
+    .policy-section li {
+      font-size: 0.85rem;
+      color: var(--text-mid);
+      line-height: 2;
+      margin-bottom: 0.3rem;
+    }
+    .contact-box {
+      background: var(--white);
+      border: 1px solid var(--border);
+      padding: 2rem;
+      margin-top: 1rem;
+    }
+    .contact-box p {
+      font-size: 0.85rem;
+      color: var(--text-mid);
+      line-height: 2;
+      margin: 0;
+    }
+    .policy-meta {
+      margin-top: 4rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--border);
+      font-size: 0.78rem;
+      color: var(--text-light);
+      line-height: 2;
+    }
+
+    /* FOOTER */
+    footer {
+      background: #1a1a18;
+      color: rgba(255,255,255,0.5);
+      padding: 2.5rem 2rem;
+      text-align: center;
+    }
+    .footer-logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.4rem;
+      font-weight: 300;
+      letter-spacing: 0.25em;
+      color: rgba(255,255,255,0.85);
+      margin-bottom: 1rem;
+    }
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+      margin-bottom: 1.5rem;
+    }
+    .footer-links a {
+      font-size: 0.75rem;
+      letter-spacing: 0.1em;
+      color: rgba(255,255,255,0.4);
+      transition: color 0.2s;
+    }
+    .footer-links a:hover { color: rgba(255,255,255,0.8); }
+    .footer-copy {
+      font-size: 0.72rem;
+      font-family: 'Cormorant Garamond', serif;
+      letter-spacing: 0.1em;
+    }
+
+    @media (max-width: 640px) {
+      .page-content { padding: 3rem 1.5rem 5rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <a href="index.html" class="header-logo">PROTEA</a>
+    <a href="index.html" class="header-back">トップページへ戻る</a>
+  </header>
+
+  <div class="page-hero">
+    <span class="page-label">Legal</span>
+    <h1 class="page-title">プライバシーポリシー</h1>
+    <p class="page-date">制定：2024年 ／ 最終改定：2026年4月</p>
+  </div>
+
+  <div class="page-content">
+    <p class="page-intro">
+      PROTEA（以下「当ブランド」）は、お客様の個人情報の保護を重要事項と捉え、以下のとおりプライバシーポリシーを定め、適切に取り扱います。当ブランドのサービスをご利用いただく前に、本ポリシーをご一読ください。
+    </p>
+
+    <div class="policy-section">
+      <h2 data-num="01">収集する個人情報</h2>
+      <p>当ブランドでは、商品の購入・お問い合わせ・公式LINEへのご登録にあたり、以下の情報をお預かりすることがあります。</p>
+      <ul>
+        <li>氏名・住所・電話番号・メールアドレスなどの連絡先情報</li>
+        <li>ご購入に関する情報（注文内容・決済情報）</li>
+        <li>公式LINEを通じてご提供いただいた情報</li>
+        <li>お問い合わせ内容</li>
+        <li>Cookieおよびウェブサイト閲覧履歴に関する情報</li>
+      </ul>
+    </div>
+
+    <div class="policy-section">
+      <h2 data-num="02">個人情報の利用目的</h2>
+      <p>収集した個人情報は、以下の目的に限り利用します。目的外での利用は行いません。</p>
+      <ul>
+        <li>商品の発送・注文管理・配送状況のご連絡</li>
+        <li>お問い合わせへの回答・アフターサポート</li>
+        <li>再入荷・新商品情報などのご案内（公式LINE・メールマガジン等）</li>
+        <li>クーポンやキャンペーン情報の配信</li>
+        <li>サービス改善のための統計・分析（個人を特定しない形式）</li>
+      </ul>
+    </div>
+
+    <div class="policy-section">
+      <h2 data-num="03">個人情報の第三者への提供</h2>
+      <p>当ブランドは、以下の場合を除き、お客様の個人情報を第三者に提供・開示することはありません。</p>
+      <ul>
+        <li>お客様の同意がある場合</li>
+        <li>商品の発送に必要な配送業者への提供（必要最小限の範囲内）</li>
+        <li>決済処理のための決済サービス事業者への提供（必要最小限の範囲内）</li>
+        <li>法令に基づき、裁判所・警察等の公的機関から開示を求められた場合</li>
+      </ul>
+    </div>
+
+    <div class="policy-section">
+      <h2 data-num="04">個人情報の安全管理</h2>
+      <p>当ブランドは、お客様の個人情報を適切に管理し、不正アクセス・紛失・漏洩・改ざん・破壊などが発生しないよう、合理的な安全管理措置を講じます。個人情報を取り扱うスタッフには、適切な監督を行います。</p>
+    </div>
+
+    <div class="policy-section">
+      <h2 data-num="05">Cookieについて</h2>
+      <p>当ウェブサイトでは、ユーザー体験の向上・アクセス解析を目的としてCookieを使用する場合があります。CookieはブラウザのCookie設定を変更することで無効にできますが、一部機能が制限される場合があります。</p>
+      <p>アクセス解析ツール（Google Analytics等）を利用する場合があります。収集されるデータは匿名化されており、個人を特定するものではありません。</p>
+    </div>
+
+    <div class="policy-section">
+      <h2 data-num="06">個人情報の開示・訂正・削除</h2>
+      <p>お客様ご自身の個人情報の開示・訂正・利用停止・削除をご希望の場合は、下記お問い合わせ先までご連絡ください。ご本人確認の上、合理的な期間内に対応いたします。</p>
+    </div>
+
+    <div class="policy-section">
+      <h2 data-num="07">未成年者の個人情報</h2>
+      <p>18歳未満のお客様が当ブランドの商品をご購入される場合は、保護者の同意を得た上でお申し込みください。</p>
+    </div>
+
+    <div class="policy-section">
+      <h2 data-num="08">プライバシーポリシーの変更</h2>
+      <p>本ポリシーは、法令の改正やサービス内容の変更等に伴い、予告なく変更する場合があります。変更後のポリシーは、このページにて公開します。重要な変更の場合は、公式LINEにてお知らせします。</p>
+    </div>
+
+    <div class="policy-section">
+      <h2 data-num="09">お問い合わせ先</h2>
+      <p>個人情報の取り扱いに関するお問い合わせは、下記よりご連絡ください。</p>
+      <div class="contact-box">
+        <p>
+          ブランド名：PROTEA<br />
+          運営者：Madoka<!-- フルネームをここに入力 --><br />
+          お問い合わせ：STORES販売ページのメッセージ機能、または公式SNSのDM<br />
+          公式サイト：<a href="https://proteaoil.stores.jp/" style="color:var(--green-deep); text-decoration:underline; text-underline-offset:3px;">proteaoil.stores.jp</a>
+        </p>
+      </div>
+    </div>
+
+    <div class="policy-meta">
+      <p>制定日：2024年<br />最終改定日：2026年4月14日</p>
+    </div>
+  </div>
+
+  <footer>
+    <p class="footer-logo">PROTEA</p>
+    <div class="footer-links">
+      <a href="index.html">トップページ</a>
+      <a href="privacy-policy.html">プライバシーポリシー</a>
+      <a href="terms.html">利用規約</a>
+      <a href="https://proteaoil.stores.jp/" target="_blank" rel="noopener noreferrer">STORESで購入する</a>
+    </div>
+    <p class="footer-copy">© 2024–2026 PROTEA / Madoka. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>

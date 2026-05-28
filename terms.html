@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>利用規約 | PROTEA</title>
+  <meta name="description" content="PROTEAの利用規約ページです。" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Noto+Sans+JP:wght@300;400;500&family=Noto+Serif+JP:wght@300;400&display=swap" rel="stylesheet" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Noto Sans JP', sans-serif;
+      font-weight: 300;
+      color: #1a1a18;
+      background: #FAFAF7;
+      line-height: 1.8;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { text-decoration: none; color: inherit; }
+
+    :root {
+      --green-deep:  #2B3D2C;
+      --green-mid:   #3D5C3E;
+      --cream:       #F5EDE3;
+      --cream-light: #FAF6F1;
+      --gold:        #C9A87A;
+      --gold-light:  #E8D4B5;
+      --text:        #1a1a18;
+      --text-mid:    #4A4A46;
+      --text-light:  #8A8A82;
+      --white:       #FFFFFF;
+      --border:      rgba(43,61,44,0.12);
+    }
+
+    /* HEADER */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      padding: 1.2rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: rgba(250, 250, 247, 0.95);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border);
+    }
+    .header-logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.6rem;
+      font-weight: 400;
+      letter-spacing: 0.25em;
+      color: var(--green-deep);
+    }
+    .header-back {
+      font-size: 0.78rem;
+      letter-spacing: 0.12em;
+      color: var(--text-mid);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: color 0.2s;
+    }
+    .header-back:hover { color: var(--green-deep); }
+    .header-back::before {
+      content: '←';
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1rem;
+    }
+
+    /* HERO */
+    .page-hero {
+      background: var(--cream-light);
+      border-bottom: 1px solid var(--border);
+      padding: 5rem 2rem 4rem;
+      text-align: center;
+    }
+    .page-label {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.72rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--gold);
+      display: block;
+      margin-bottom: 1rem;
+    }
+    .page-title {
+      font-family: 'Noto Serif JP', serif;
+      font-size: clamp(1.6rem, 3vw, 2.4rem);
+      font-weight: 300;
+      color: var(--green-deep);
+      margin-bottom: 1rem;
+    }
+    .page-date {
+      font-size: 0.78rem;
+      color: var(--text-light);
+      letter-spacing: 0.1em;
+    }
+
+    /* CONTENT */
+    .page-content {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 5rem 2rem 8rem;
+    }
+    .page-intro {
+      font-size: 0.88rem;
+      color: var(--text-mid);
+      line-height: 2.2;
+      padding: 2rem;
+      background: var(--cream-light);
+      border-left: 3px solid var(--gold-light);
+      margin-bottom: 3rem;
+    }
+    .policy-section {
+      margin-bottom: 3rem;
+      padding-bottom: 3rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .policy-section:last-child { border-bottom: none; }
+    .policy-section h2 {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 1rem;
+      font-weight: 400;
+      color: var(--green-deep);
+      margin-bottom: 1.2rem;
+      display: flex;
+      align-items: baseline;
+      gap: 1rem;
+    }
+    .policy-section h2::before {
+      content: attr(data-num);
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.4rem;
+      font-weight: 300;
+      color: var(--gold);
+      flex-shrink: 0;
+    }
+    .policy-section p {
+      font-size: 0.85rem;
+      color: var(--text-mid);
+      line-height: 2.2;
+      margin-bottom: 0.8rem;
+    }
+    .policy-section ul {
+      padding-left: 1.4rem;
+      margin: 0.6rem 0 0.8rem;
+    }
+    .policy-section li {
+      font-size: 0.85rem;
+      color: var(--text-mid);
+      line-height: 2;
+      margin-bottom: 0.3rem;
+    }
+    .contact-box {
+      background: var(--white);
+      border: 1px solid var(--border);
+      padding: 2rem;
+      margin-top: 1rem;
+    }
+    .contact-box p {
+      font-size: 0.85rem;
+      color: var(--text-mid);
+      line-height: 2;
+      margin: 0;
+    }
+    .policy-meta {
+      margin-top: 4rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--border);
+      font-size: 0.78rem;
+      color: var(--text-light);
+      line-height: 2;
+    }
+
+    /* FOOTER */
+    footer {
+      background: #1a1a18;
+      color: rgba(255,255,255,0.5);
+      padding: 2.5rem 2rem;
+      text-align: center;
+    }
+    .footer-logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.4rem;
+      font-weight: 300;
+      letter-spacing: 0.25em;
+      color: rgba(255,255,255,0.85);
+      margin-bottom: 1rem;
+    }
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+      margin-bottom: 1.5rem;
+    }
+    .footer-links a {
+      font-size: 0.75rem;
+      letter-spacing: 0.1em;
+      color: rgba(255,255,255,0.4);
+      transition: color 0.2s;
+    }
+    .footer-links a:hover { color: rgba(255,255,255,0.8); }
+    .footer-copy {
+      font-size: 0.72rem;
+      font-family: 'Cormorant Garamond', serif;
+      letter-spacing: 0.1em;
+    }
+
+    @media (max-width: 640px) {
+      .page-content { padding: 3rem 1.5rem 5rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <a href="index.html" class="header-logo">PROTEA</a>
+    <a href="index.html" class="header-back">トップページへ戻る</a>
+  </header>
+
+  <div class="page-hero">
+    <span class="page-label">Legal</span>
+    <h1 class="page-title">利用規約</h1>
+    <p class="page-date">制定：2024年 ／ 最終改定：2026年4月</p>
+  </div>
+
+  <div class="page-content">
+    <p class="page-intro">
+      本利用規約（以下「本規約」）は、PROTEA（以下「当ブランド」）が提供する商品・サービス・ウェブサイト（以下「本サービス」）をご利用いただく際の条件を定めるものです。ご購入・ご利用の前に、必ずお読みください。本サービスをご利用いただいた時点で、本規約に同意いただいたものとみなします。
+    </p>
+
+    <div class="policy-section">
+      <h2 data-num="01">適用範囲</h2>
+      <p>本規約は、当ブランドのウェブサイト・STORES販売ページ・公式LINEアカウントを通じて提供するすべてのサービスおよび商品の購入に適用されます。</p>
+    </div>
+
+    <div class="policy-section">
+      <h2 data-num="02">商品の購入・予約販売について</h2>
+      <p>当ブランドの商品は、STORESにて通常販売・予約販売・定期便の形式で販売しています。</p>
+      <ul>
+        <li>予約販売の場合、発送は在庫準備が整い次第順次行います。発送時期は公式LINEおよびSTORESページにてご案内します。</li>
+        <li>在庫数には限りがあるため、ご注文いただいても在庫が不足する場合には、速やかにご連絡の上、キャンセル対応をいたします。</li>
+        <li>定期便は、指定の周期で商品をお届けするサービスです。解約をご希望の場合は、次回発送日の7日前までにご連絡ください。</li>
+      </ul>
+    </div>
+
+    <div class="policy-section">
+      <h2 data-num="03">価格・支払いについて</h2>
+      <p>商品の価格は、表示価格（税込）のとおりです。</p>
+      <ul>
+        <li>通常販売価格：¥7,700（税込）</li>
+        <li>定期便価格：¥7,000（税込）</li>
+        <li>送料は別途かかる場合があります。送料については購入ページをご確認ください。</li>
+        <li>価格は予告なく変更する場合があります。ご注文後の変更はありません。</li>
+        <li>支払い方法はSTORESが対応するお支払い方法に準じます。</li>
+      </ul>
+    </div>
+
+    <div class="policy-section">
+      <h2 data-num="04">キャンセル・返品・交換について</h2>
+      <p>お客様都合によるキャンセル・返品・交換は、原則としてお受けできません。ただし、以下の場合はご対応いたします。</p>
+      <ul>
+        <li>商品に破損・汚損・誤送があった場合：到着後7日以内にご連絡ください。</li>
+        <li>商品の品質に問題があると判断した場合：当ブランドの判断により、交換または返金対応いたします。</li>
+      </ul>
+      <p>開封済みの商品については、衛生上の理由から返品・交換をお受けできませんので、あらかじめご了承ください。</p>
+    </div>
+
+    <div class="policy-section">
+      <h2 data-num="05">商品のご使用上の注意</h2>
+      <ul>
+        <li>本商品は化粧品です。お肌に異常が生じた際はただちに使用をやめ、皮膚科専門医にご相談ください。</li>
+        <li>傷・湿疹などの肌荒れのある部位へのご使用はお避けください。</li>
+        <li>目に入らないようご注意ください。万が一目に入った場合はすぐに水で洗い流してください。</li>
+        <li>乳幼児の手の届かない場所で保管してください。</li>
+        <li>直射日光・高温多湿を避けて保管してください。</li>
+        <li>全成分はパッケージおよびSTORES販売ページをご確認のうえ、アレルギーがある方はご使用前にパッチテストを行ってください。</li>
+      </ul>
+    </div>
+
+    <div class="policy-section">
+      <h2 data-num="06">クーポン・特典について</h2>
+      <ul>
+        <li>公式LINEご登録特典のクーポンは、記載の有効期限内にSTORESにてご使用ください。</li>
+        <li>クーポンは1回のご注文につき1枚のみ有効です。他のクーポンとの併用はできません。</li>
+        <li>クーポンコードの第三者への譲渡・転売は禁止します。</li>
+        <li>不正使用が確認された場合、クーポンを無効にする場合があります。</li>
+      </ul>
+    </div>
+
+    <div class="policy-section">
+      <h2 data-num="07">知的財産権について</h2>
+      <p>当ブランドのウェブサイト・公式SNS・公式LINEに掲載されているすべてのコンテンツ（文章・画像・ロゴ・デザイン等）の著作権は、当ブランドまたは正当な権利を有する第三者に帰属します。無断転載・複製・改変・商用利用を禁じます。</p>
+    </div>
+
+    <div class="policy-section">
+      <h2 data-num="08">禁止事項</h2>
+      <p>本サービスのご利用にあたり、以下の行為を禁止します。</p>
+      <ul>
+        <li>虚偽の情報を用いた購入・申込み</li>
+        <li>転売・商用目的での購入</li>
+        <li>当ブランドへの不当な要求・誹謗中傷</li>
+        <li>本サービスの運営を妨害する行為</li>
+        <li>その他、当ブランドが不適切と判断する行為</li>
+      </ul>
+    </div>
+
+    <div class="policy-section">
+      <h2 data-num="09">免責事項</h2>
+      <p>当ブランドは、以下の事項について責任を負いません。</p>
+      <ul>
+        <li>お客様の肌質・体質・健康状態による商品のご使用結果</li>
+        <li>天災・交通事情・配送業者の都合による発送・配送の遅延</li>
+        <li>当ブランドのウェブサイト・サービスの一時停止・変更・終了</li>
+        <li>第三者のウェブサイトへのリンクが含まれる場合、その内容について</li>
+      </ul>
+    </div>
+
+    <div class="policy-section">
+      <h2 data-num="10">規約の変更</h2>
+      <p>当ブランドは、必要に応じて本規約を変更することがあります。変更後の規約はこのページにて公開します。重要な変更の場合は公式LINEにてお知らせします。変更後に本サービスをご利用いただいた場合、変更後の規約に同意したものとみなします。</p>
+    </div>
+
+    <div class="policy-section">
+      <h2 data-num="11">準拠法・管轄裁判所</h2>
+      <p>本規約は日本法に準拠します。本サービスに関連して紛争が生じた場合は、当ブランドの所在地を管轄する裁判所を第一審の専属的合意管轄裁判所とします。</p>
+    </div>
+
+    <div class="policy-section">
+      <h2 data-num="12">お問い合わせ</h2>
+      <p>本規約に関するお問い合わせは、下記よりご連絡ください。</p>
+      <div class="contact-box">
+        <p>
+          ブランド名：PROTEA<br />
+          運営者：Madoka<!-- フルネームをここに入力 --><br />
+          お問い合わせ：STORES販売ページのメッセージ機能、または公式SNSのDM<br />
+          公式サイト：<a href="https://proteaoil.stores.jp/" style="color:var(--green-deep); text-decoration:underline; text-underline-offset:3px;">proteaoil.stores.jp</a>
+        </p>
+      </div>
+    </div>
+
+    <div class="policy-meta">
+      <p>制定日：2024年<br />最終改定日：2026年4月14日</p>
+    </div>
+  </div>
+
+  <footer>
+    <p class="footer-logo">PROTEA</p>
+    <div class="footer-links">
+      <a href="index.html">トップページ</a>
+      <a href="privacy-policy.html">プライバシーポリシー</a>
+      <a href="terms.html">利用規約</a>
+      <a href="https://proteaoil.stores.jp/" target="_blank" rel="noopener noreferrer">STORESで購入する</a>
+    </div>
+    <p class="footer-copy">© 2024–2026 PROTEA / Madoka. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
