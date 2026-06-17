@@ -1120,6 +1120,126 @@
     .fade-in-delay-1 { transition-delay: 0.1s; }
     .fade-in-delay-2 { transition-delay: 0.2s; }
     .fade-in-delay-3 { transition-delay: 0.3s; }
+
+    /* ===================== VALUE / COST SECTION ===================== */
+    #value {
+      padding: 8rem 0;
+      background: var(--green-deep);
+      color: var(--white);
+    }
+    .value-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+    .value-header {
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+    .value-headline {
+      font-family: 'Noto Serif JP', serif;
+      font-size: clamp(1.4rem, 2.8vw, 2.2rem);
+      font-weight: 300;
+      line-height: 1.7;
+      color: var(--white);
+      margin-bottom: 1rem;
+    }
+    .value-headline span { color: var(--gold-light); }
+    .value-subline {
+      font-size: 0.88rem;
+      color: rgba(255,255,255,0.65);
+      line-height: 2;
+    }
+    .value-compare {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      gap: 2rem;
+      align-items: center;
+      margin-bottom: 3rem;
+    }
+    .value-product {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.12);
+      padding: 2.5rem 2rem;
+      text-align: center;
+    }
+    .value-product.highlight {
+      background: rgba(201,168,122,0.15);
+      border-color: var(--gold);
+    }
+    .value-product-brand {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.72rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.4);
+      margin-bottom: 0.8rem;
+    }
+    .value-product.highlight .value-product-brand { color: var(--gold); }
+    .value-product-name {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 0.95rem;
+      font-weight: 400;
+      color: var(--white);
+      margin-bottom: 1.5rem;
+      line-height: 1.6;
+    }
+    .value-product-price {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.2rem;
+      font-weight: 300;
+      color: var(--white);
+      line-height: 1;
+      margin-bottom: 0.3rem;
+    }
+    .value-product.highlight .value-product-price { color: var(--gold-light); }
+    .value-product-per {
+      font-size: 0.72rem;
+      color: rgba(255,255,255,0.5);
+      letter-spacing: 0.1em;
+    }
+    .value-vs {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.5rem;
+      color: rgba(255,255,255,0.3);
+      text-align: center;
+    }
+    .value-reasons {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+    .value-reason {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.08);
+      padding: 1.8rem 1.5rem;
+    }
+    .value-reason-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2rem;
+      color: var(--gold);
+      opacity: 0.6;
+      line-height: 1;
+      margin-bottom: 0.8rem;
+    }
+    .value-reason-title {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 0.9rem;
+      font-weight: 400;
+      color: var(--white);
+      margin-bottom: 0.6rem;
+    }
+    .value-reason-body {
+      font-size: 0.78rem;
+      color: rgba(255,255,255,0.6);
+      line-height: 1.9;
+    }
+    @media (max-width: 900px) {
+      .value-compare { grid-template-columns: 1fr; }
+      .value-vs { display: none; }
+      .value-reasons { grid-template-columns: 1fr; }
+    }
+
   </style>
 </head>
 <body>
@@ -1151,14 +1271,14 @@
     <div class="hero-content">
       <span class="hero-badge">Plant Oil Beauty — Since 2024</span>
       <h1 class="hero-title">
-        ベタつかず、すっと馴染む。<br />
-        <em>顔・髪・からだ</em>を<br />
-        ひとつで整える、<br />植物オイル。
+        処方が、肌を変える。<br />
+        <em>べたつかないのは、</em><br />
+        設計の答え。
       </h1>
       <p class="hero-desc">
-        忙しい毎日の中でも、肌の状態を見ながら<br />
-        自分に合うケアを続けていける。<br />
-        必要な分だけうるおいを残す設計のPROTEAオイルです。
+        お疲れママから、艶ママへ。<br />
+        医療的ケア児ママが本気でつくった植物オイル。<br />
+        顔・髪・からだ、これひとつで整える。
       </p>
       <div class="hero-actions">
         <a href="https://proteaoil.stores.jp/" target="_blank" rel="noopener noreferrer" class="btn-primary">今すぐ購入する</a>
@@ -1254,7 +1374,7 @@
             <ellipse cx="26" cy="38" rx="14" ry="6"/>
             <path d="M14 44 Q12 36 26 32 Q40 36 38 44"/>
           </svg>
-          <h3 class="feature-title">ベタつかず、すっとなじむ<br />軽いテクスチャー</h3>
+          <h3 class="feature-title">軽さは、<br />フォーミュラの結果。</h3>
           <p class="feature-body">サラッとしたテクスチャーで、オイル特有のべたつきがありません。すばやく肌になじみ、時間のない朝にも使いやすい設計です。</p>
         </div>
         <div class="feature-card fade-in fade-in-delay-1">
@@ -1265,7 +1385,7 @@
             <path d="M10 28 Q18 24 26 30 Q34 24 42 28"/>
             <path d="M10 40 Q18 36 26 42 Q34 36 42 40"/>
           </svg>
-          <h3 class="feature-title">顔・髪・からだ<br />これひとつで完結</h3>
+          <h3 class="feature-title">顔も、髪も、子どもも。<br />これ一本。</h3>
           <p class="feature-body">スキンケア・ヘアケア・ボディケアをこれ一本でまとめられます。アイテムを減らして、毎日のケアをシンプルに整えましょう。</p>
         </div>
         <div class="feature-card fade-in fade-in-delay-2">
@@ -1274,7 +1394,7 @@
             <path d="M26 8 C18 18 12 24 12 32 C12 40 18 46 26 46 C34 46 40 40 40 32 C40 24 34 18 26 8Z"/>
             <path d="M20 32 C22 36 24 38 26 38"/>
           </svg>
-          <h3 class="feature-title">肌に必要なうるおいを<br />やさしく残す設計</h3>
+          <h3 class="feature-title">15種の植物、<br />ひとつも妥協しなかった。</h3>
           <p class="feature-body">植物オイルに含まれる脂肪酸が、乾燥しやすい肌をやさしく守り、肌の土台を整えるサポートをします。季節の変わり目にも心強い一本。</p>
         </div>
       </div>
@@ -1287,6 +1407,7 @@
       <div class="how-header fade-in">
         <span class="section-label">How to Use</span>
         <h2 class="section-title">使い方</h2>
+        <p class="section-subtitle" style="font-family:'Noto Serif JP',serif; font-size:1rem; color:var(--green-deep); margin-bottom:0.5rem;">1プッシュでOK。難しい使い方は、一切ありません。</p>
         <p class="section-subtitle">洗顔後の清潔な肌に、1〜3滴を手のひらで温めてからお使いください。</p>
       </div>
       <div class="how-grid">
@@ -1344,8 +1465,9 @@
       <div class="ingredients-inner">
         <div class="ingredients-header fade-in">
           <span class="section-label">Ingredients</span>
-          <h2 class="section-title">肌の土台を整える、<br />植物の力</h2>
-          <p class="section-subtitle">PROTEAオイルは、厳選した植物由来の成分を使用しています。</p>
+          <h2 class="section-title">パッケージより、<br />フォーミュラ。</h2>
+          <p class="section-subtitle" style="font-family:'Noto Serif JP',serif; font-size:1rem; color:var(--green-deep); margin-bottom:0.8rem;">軽さと保護力、両立のために15種を選んだ。</p>
+          <p class="section-subtitle">ひとつひとつの植物に理由がある。PROTEAオイルは、厳選した植物由来の成分を使用しています。</p>
         </div>
         <div class="ingredients-grid">
           <div class="ingredient-card fade-in">
@@ -1411,13 +1533,60 @@
         <div class="story-img fade-in">BRAND IMAGE</div>
         <div class="story-content fade-in fade-in-delay-1">
           <span class="section-label">Brand Story</span>
-          <h2 class="section-title">大切にお届けするために、<br />少量ずつ、丁寧に。</h2>
+          <h2 class="section-title">眠れない夜が、<br />ずっと続いてた。<br />それでも、自分を<br />諦めたくなかった。</h2>
           <div class="story-body">
-            <p>PROTEAは、オイルの鮮度がとても大切だと考えています。だから大量に作り置きをせず、出来立ての状態でお届けすることを大切にしています。</p>
-            <p>ラベルや容器、香りのバランス—毎日手に取るものだからこそ、細部まで妥協しないようにしています。お届けまで少し時間がかかることがありますが、それは納得できる状態でお届けしたいから。</p>
-            <p>忙しい毎日の中でも、自分の肌を見ながらケアを続けていける。そんなひとつのアイテムを、これからも丁寧につくり続けていきます。</p>
+            <p>医療的ケア児を育てながら、本気で開発した。それがPROTEAの始まりです。</p>
+            <p>睡眠も、時間も、思い通りにならない毎日の中で、それでも自分の肌を諦めたくなかった。「べたつくオイルじゃ、子どもに触れられない。だから作った。」——そんな切実な思いが、このオイルの処方を生みました。</p>
+            <p>PROTEAは、大量に作り置きをせず、出来立ての状態でお届けすることにこだわっています。ラベルや容器、香りのバランス——毎日手に取るものだからこそ、細部まで妥協しない。同じ思いを持つすべての方に届けたい一本です。</p>
           </div>
           <p class="story-signature">— Madoka / PROTEA</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ===== VALUE / COST SECTION ===== -->
+  <section id="value">
+    <div class="value-inner">
+      <div class="value-header fade-in">
+        <span class="section-label" style="color:var(--gold);">Value</span>
+        <h2 class="value-headline">
+          百貨店に並べたら<span>¥16,500</span>する成分を、<br />
+          なぜ<span>¥7,700</span>で届けられるのか。
+        </h2>
+        <p class="value-subline">AQボタニカル（デコルテ）と同等の植物オイルを使用。その価格差、約5分の1。</p>
+      </div>
+      <div class="value-compare fade-in">
+        <div class="value-product">
+          <p class="value-product-brand">AQ Botanicals / DECORTÉ</p>
+          <p class="value-product-name">AQボタニカル<br />マルチビューティーオイル</p>
+          <p class="value-product-price">¥16,500</p>
+          <p class="value-product-per">40ml / 1mlあたり ¥412</p>
+        </div>
+        <div class="value-vs">vs</div>
+        <div class="value-product highlight">
+          <p class="value-product-brand">PROTEA</p>
+          <p class="value-product-name">ボタニカル<br />ピュアオイル</p>
+          <p class="value-product-price">¥7,700</p>
+          <p class="value-product-per">100ml / 1mlあたり ¥77</p>
+        </div>
+      </div>
+      <div class="value-reasons fade-in">
+        <div class="value-reason">
+          <div class="value-reason-num">01</div>
+          <h3 class="value-reason-title">百貨店の棚代がない</h3>
+          <p class="value-reason-body">直販モデルだから、流通マージンや百貨店の棚代がかかりません。その分、成分に投資しています。</p>
+        </div>
+        <div class="value-reason">
+          <div class="value-reason-num">02</div>
+          <h3 class="value-reason-title">小ロット・出来立て発送</h3>
+          <p class="value-reason-body">大量生産ではなく、少量ずつ丁寧に作るから、フレッシュな状態でお届けできます。</p>
+        </div>
+        <div class="value-reason">
+          <div class="value-reason-num">03</div>
+          <h3 class="value-reason-title">パッケージより中身に投資</h3>
+          <p class="value-reason-body">豪華な箱や広告費より、処方の質にこだわる。これがPROTEAの価値哲学です。</p>
         </div>
       </div>
     </div>
@@ -1428,7 +1597,7 @@
     <div class="cta-inner">
       <span class="section-label">Purchase</span>
       <h2 class="cta-title fade-in">
-        毎日のケアを、<br />シンプルに。<br />肌の土台を整える一本。
+        贅沢を、日常に。<br />特別から、毎日へ。
       </h2>
       <p class="cta-body fade-in">数量限定販売です。在庫がなくなり次第、販売は一度終了となります。<br />気になっていた方は、このタイミングでご購入ください。</p>
       <div class="cta-product-info fade-in">
