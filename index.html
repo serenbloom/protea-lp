@@ -1240,6 +1240,175 @@
       .value-reasons { grid-template-columns: 1fr; }
     }
 
+
+    /* ===== MULTI-USE SECTION ===== */
+    #multi-use {
+      padding: 8rem 0;
+      background: var(--cream-light);
+    }
+    #multi-use .section-label { display: block; text-align: center; }
+    #multi-use .section-title { text-align: center; margin-bottom: 0.8rem; }
+    #multi-use .section-subtitle { text-align: center; color: var(--text-mid); font-size: 0.9rem; line-height: 1.9; margin-bottom: 3.5rem; }
+    .multi-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2rem;
+    }
+    .multi-item {
+      padding: 2.5rem 1.8rem;
+      background: var(--white);
+      border: 1px solid var(--border);
+      text-align: center;
+      transition: transform 0.3s ease;
+    }
+    .multi-item:hover { transform: translateY(-4px); }
+    .multi-icon {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.8rem;
+      color: var(--gold);
+      margin-bottom: 1.2rem;
+      line-height: 1;
+    }
+    .multi-item h3 {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 0.9rem;
+      font-weight: 400;
+      color: var(--green-deep);
+      margin-bottom: 0.8rem;
+      line-height: 1.7;
+    }
+    .multi-item p {
+      font-size: 0.78rem;
+      color: var(--text-mid);
+      line-height: 2;
+    }
+    @media (max-width: 900px) {
+      .multi-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 640px) {
+      .multi-grid { grid-template-columns: 1fr; gap: 1rem; }
+      .multi-item { padding: 2rem 1.5rem; }
+    }
+
+    /* ===== CTA PRICING CARDS ===== */
+    /* CTA背景はcream-light（明るい）前提のデザイン */
+    .cta-pricing-wrap {
+      display: flex;
+      gap: 1.5rem;
+      align-items: stretch;
+      margin: 2.5rem 0 0;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .cta-plan {
+      position: relative;
+      padding: 2.5rem 2rem 2rem;
+      text-align: center;
+      min-width: 220px;
+    }
+    /* 定期便カード：ゴールドボーダーで自然に強調 */
+    .cta-plan-subscription {
+      background: var(--white);
+      border: 2px solid var(--gold);
+      flex: 1.2;
+      padding-top: 3rem;
+    }
+    /* 通常購入カード：同じ白ベース・細いボーダー */
+    .cta-plan-single {
+      background: var(--white);
+      border: 1px solid var(--border);
+      flex: 1;
+    }
+    .cta-plan-badge {
+      position: absolute;
+      top: -14px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--gold);
+      color: var(--green-deep);
+      font-family: 'Noto Serif JP', serif;
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      padding: 0.3rem 1.4rem;
+      white-space: nowrap;
+    }
+    /* 定期便ラベル */
+    .cta-plan-subscription .cta-plan-label {
+      font-size: 0.7rem;
+      letter-spacing: 0.18em;
+      color: var(--gold);
+      margin-bottom: 0.8rem;
+      font-weight: 500;
+    }
+    /* 通常購入ラベル */
+    .cta-plan-single .cta-plan-label {
+      font-size: 0.7rem;
+      letter-spacing: 0.18em;
+      color: var(--text-light);
+      margin-bottom: 0.8rem;
+    }
+    /* 定期便価格（大きく） */
+    .cta-plan-subscription .cta-plan-price {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.6rem;
+      color: var(--green-deep);
+      line-height: 1;
+      margin-bottom: 0.4rem;
+    }
+    /* 通常購入価格（小さく） */
+    .cta-plan-single .cta-plan-price {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.9rem;
+      color: var(--text-mid);
+      line-height: 1;
+      margin-bottom: 1.5rem;
+    }
+    .cta-plan-saving {
+      font-size: 0.73rem;
+      color: var(--gold);
+      letter-spacing: 0.08em;
+      margin-bottom: 1.8rem;
+    }
+    /* 定期便ボタン */
+    .cta-plan-subscription .btn-primary-cta {
+      display: block;
+      background: var(--gold);
+      color: var(--green-deep);
+      font-family: 'Noto Serif JP', serif;
+      font-size: 0.85rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      padding: 1rem 1.5rem;
+      text-decoration: none;
+      transition: background 0.3s;
+      width: 100%;
+    }
+    .cta-plan-subscription .btn-primary-cta:hover { background: var(--gold-light); }
+    /* 通常購入ボタン */
+    .cta-plan-single .btn-outline-cta {
+      display: block;
+      font-size: 0.75rem;
+      padding: 0.75rem 1.5rem;
+      border: 1px solid var(--border);
+      color: var(--text-mid);
+      letter-spacing: 0.1em;
+      text-decoration: none;
+      transition: all 0.3s;
+      width: 100%;
+    }
+    .cta-plan-single .btn-outline-cta:hover { border-color: var(--green-deep); color: var(--green-deep); }
+    .cta-plan-cancel-note {
+      font-size: 0.63rem;
+      color: var(--text-light);
+      margin-top: 0.7rem;
+      letter-spacing: 0.05em;
+    }
+    @media (max-width: 640px) {
+      .cta-pricing-wrap { flex-direction: column-reverse; gap: 1rem; }
+      .cta-plan { min-width: unset; }
+      .cta-plan-subscription .cta-plan-price { font-size: 2.2rem; }
+    }
   </style>
 </head>
 <body>
@@ -1248,11 +1417,11 @@
   <header id="site-header">
     <a href="#hero" class="header-logo">PROTEA</a>
     <nav class="header-nav">
+      <a href="#testimonials">お客様の変化</a>
       <a href="#product-intro">商品について</a>
-      <a href="#new-product" style="color:var(--gold);">NEW</a>
       <a href="#how-to-use">使い方</a>
-      <a href="#testimonials">お客様の声</a>
       <a href="#brand-story">ブランドストーリー</a>
+      <a href="#new-product" style="color:var(--gold);">NEW</a>
       <a href="#faq">FAQ</a>
       <a href="https://proteaoil.stores.jp/" target="_blank" rel="noopener noreferrer" class="header-cta">購入する</a>
     </nav>
@@ -1271,14 +1440,13 @@
     <div class="hero-content">
       <span class="hero-badge">Plant Oil Beauty — Since 2024</span>
       <h1 class="hero-title">
-        処方が、肌を変える。<br />
-        <em>べたつかないのは、</em><br />
-        設計の答え。
+        肌には、新鮮なオイルが<br />
+        <em>たっぷり</em>必要だった。
       </h1>
       <p class="hero-desc">
-        お疲れママから、艶ママへ。<br />
-        医療的ケア児ママが本気でつくった植物オイル。<br />
-        顔・髪・からだ、これひとつで整える。
+        オイルがべたつくのは、設計の問題じゃない。<br />
+        古くなった油が、肌に残るから。<br />
+        新鮮なまま届けるPROTEAは、べたつかない。
       </p>
       <div class="hero-actions">
         <a href="https://proteaoil.stores.jp/" target="_blank" rel="noopener noreferrer" class="btn-primary">今すぐ購入する</a>
@@ -1296,40 +1464,71 @@
   <section id="problem">
     <div class="problem-inner">
       <p class="problem-intro fade-in">
-        ちゃんとやろうと思うほど、<br />
-        スキンケアが<span>続かない。</span>
+        オイルは、<br />
+        べたつくもの<span>ですか？</span>
       </p>
       <div class="problem-list">
         <div class="problem-item fade-in">
           <svg class="problem-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
             <circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/>
           </svg>
-          <p class="problem-text">時間がない日ほど、肌の調子が崩れてしまう。ケアをしたくても、多ステップは続かない。</p>
+          <p class="problem-text">高いオイルだから、ケチって少ししか使えない。結果、ボトルの中でゆっくりと酸化していく。</p>
         </div>
         <div class="problem-item fade-in">
           <svg class="problem-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
             <circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/>
           </svg>
-          <p class="problem-text">オイルのベタつきが気になって、朝は使えなかった。服につくのも不安だった。</p>
+          <p class="problem-text">古くなった油は有効成分が分解され、余分な脂質が残る。それが肌に乗るから、べたつく。オイルが悪いんじゃなく、<strong>鮮度の問題。</strong></p>
         </div>
         <div class="problem-item fade-in">
           <svg class="problem-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
             <circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/>
           </svg>
-          <p class="problem-text">顔用、ヘア用、ボディ用と、アイテムが増えすぎてどれも中途半端になってしまう。</p>
+          <p class="problem-text">顔用・髪用・ボディ用と揃えると、結局どれも中途半端にしか使えない。どれも少しずつ残って、気づけば古くなっている。</p>
         </div>
         <div class="problem-item fade-in">
           <svg class="problem-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
             <circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/>
           </svg>
-          <p class="problem-text">花粉の季節や乾燥の時期になると、どんなケアをしても肌が落ち着かない。</p>
+          <p class="problem-text">大量生産のオイルは、製造から店頭に並ぶまでに時間がかかる。あなたの手元に届く頃には、すでに鮮度が落ちている。</p>
         </div>
       </div>
       <p class="problem-closing fade-in">
-        毎日使えるシンプルなケアで、<br />肌の土台を整えるものが必要だった。
+        新鮮なオイルを、たっぷり使う。<br />たったそれだけで、肌は変わる。
       </p>
     </div>
   </section>
+
+  <!-- ===== TESTIMONIALS ===== -->
+  <section id="testimonials">
+    <div class="container">
+      <div class="testimonials-header fade-in">
+        <span class="section-label">Before → After</span>
+        <h2 class="section-title">実際に使っていただいた方の<em style="font-style:normal;">変化</em></h2>
+      </div>
+      <div class="testimonials-grid">
+        <div class="testimonial-card fade-in">
+          <div class="testimonial-quote">"</div>
+          <p class="testimonial-body">1ヶ月続けたら肌が変わって、撮影の日に「肌きれいですね」って褒められました。毎年花粉で荒れていたのに、今年はそれも感じなくて驚いています。</p>
+          <p class="testimonial-highlight">花粉の季節もしっかり乗り越えられました</p>
+          <p class="testimonial-author">30代女性</p>
+        </div>
+        <div class="testimonial-card fade-in fade-in-delay-1">
+          <div class="testimonial-quote">"</div>
+          <p class="testimonial-body">忙しくてスキンケアが続かなかったのに、これだけはちゃんと続けられています。夜にさっとなじませるだけで翌朝の肌の感触が全然違う。</p>
+          <p class="testimonial-highlight">翌朝の肌の感触が変わりました</p>
+          <p class="testimonial-author">20代女性</p>
+        </div>
+        <div class="testimonial-card fade-in fade-in-delay-2">
+          <div class="testimonial-quote">"</div>
+          <p class="testimonial-body">オイルってベタつくイメージがあったけど、これは全然違う。髪にも使えるので洗面台がすっきりしました。香りも自然で毎日使うのが楽しみです。</p>
+          <p class="testimonial-highlight">顔にも髪にも使えてとても便利</p>
+          <p class="testimonial-author">30代女性</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
 
   <!-- ===== PRODUCT INTRO ===== -->
   <section id="product-intro">
@@ -1374,7 +1573,7 @@
             <ellipse cx="26" cy="38" rx="14" ry="6"/>
             <path d="M14 44 Q12 36 26 32 Q40 36 38 44"/>
           </svg>
-          <h3 class="feature-title">軽さは、<br />フォーミュラの結果。</h3>
+          <h3 class="feature-title">軽さは、<br />中身設計の結果。</h3>
           <p class="feature-body">サラッとしたテクスチャーで、オイル特有のべたつきがありません。すばやく肌になじみ、時間のない朝にも使いやすい設計です。</p>
         </div>
         <div class="feature-card fade-in fade-in-delay-1">
@@ -1465,7 +1664,7 @@
       <div class="ingredients-inner">
         <div class="ingredients-header fade-in">
           <span class="section-label">Ingredients</span>
-          <h2 class="section-title">パッケージより、<br />フォーミュラ。</h2>
+          <h2 class="section-title">パッケージより、<br />中身設計。</h2>
           <p class="section-subtitle" style="font-family:'Noto Serif JP',serif; font-size:1rem; color:var(--green-deep); margin-bottom:0.8rem;">軽さと保護力、両立のために15種を選んだ。</p>
           <p class="section-subtitle">ひとつひとつの植物に理由がある。PROTEAオイルは、厳選した植物由来の成分を使用しています。</p>
         </div>
@@ -1492,36 +1691,6 @@
           </div>
         </div>
         <p class="ingredients-note fade-in">※ 全成分は商品パッケージおよびSTORES販売ページをご確認ください。<br />※ 肌に異常が生じた際はご使用をおやめいただき、皮膚科専門医へご相談ください。</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== TESTIMONIALS ===== -->
-  <section id="testimonials">
-    <div class="container">
-      <div class="testimonials-header fade-in">
-        <span class="section-label">Reviews</span>
-        <h2 class="section-title">実際に使っていただいた方の声</h2>
-      </div>
-      <div class="testimonials-grid">
-        <div class="testimonial-card fade-in">
-          <div class="testimonial-quote">"</div>
-          <p class="testimonial-body">1ヶ月続けたら肌が変わって、撮影の日に「肌きれいですね」って褒められました。毎年花粉で荒れていたのに、今年はそれも感じなくて驚いています。</p>
-          <p class="testimonial-highlight">花粉の季節もしっかり乗り越えられました</p>
-          <p class="testimonial-author">30代女性</p>
-        </div>
-        <div class="testimonial-card fade-in fade-in-delay-1">
-          <div class="testimonial-quote">"</div>
-          <p class="testimonial-body">忙しくてスキンケアが続かなかったのに、これだけはちゃんと続けられています。夜にさっとなじませるだけで翌朝の肌の感触が全然違う。</p>
-          <p class="testimonial-highlight">翌朝の肌の感触が変わりました</p>
-          <p class="testimonial-author">20代女性</p>
-        </div>
-        <div class="testimonial-card fade-in fade-in-delay-2">
-          <div class="testimonial-quote">"</div>
-          <p class="testimonial-body">オイルってベタつくイメージがあったけど、これは全然違う。髪にも使えるので洗面台がすっきりしました。香りも自然で毎日使うのが楽しみです。</p>
-          <p class="testimonial-highlight">顔にも髪にも使えてとても便利</p>
-          <p class="testimonial-author">30代女性</p>
-        </div>
       </div>
     </div>
   </section>
@@ -1592,6 +1761,40 @@
     </div>
   </section>
 
+
+  <!-- ===== MULTI-USE SECTION ===== -->
+  <section id="multi-use">
+    <div class="container">
+      <span class="section-label fade-in">More Uses</span>
+      <h2 class="section-title fade-in">一本で、あらゆる場面へ。</h2>
+      <p class="section-subtitle fade-in">
+        植物由来100%の処方だから、<br />ライフステージを問わず、家族みんなで使えます。
+      </p>
+      <div class="multi-grid">
+        <div class="multi-item fade-in">
+          <div class="multi-icon">✦</div>
+          <h3>妊娠中・産後のケアに</h3>
+          <p>お腹まわりの保湿から全身ケアまで。合成香料・着色料不使用だから、妊娠中も安心して使えます。</p>
+        </div>
+        <div class="multi-item fade-in fade-in-delay-1">
+          <div class="multi-icon">✦</div>
+          <h3>赤ちゃん・子どもの<br />お肌にも</h3>
+          <p>デリケートな赤ちゃんの肌にも。お風呂上がりのスキンケアを、親子でいっしょに。</p>
+        </div>
+        <div class="multi-item fade-in fade-in-delay-2">
+          <div class="multi-icon">✦</div>
+          <h3>パパのスキンケアにも</h3>
+          <p>化粧水・乳液・ヘアオイルをこれ1本に。スキンケアをシンプルにしたい方にも喜ばれています。</p>
+        </div>
+        <div class="multi-item fade-in fade-in-delay-3">
+          <div class="multi-icon">✦</div>
+          <h3>大切な方へのギフトに</h3>
+          <p>顔・髪・からだ全身に使えるマルチオイルは、世代を問わず喜ばれる贈り物です。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- ===== CTA SECTION ===== -->
   <section id="cta">
     <div class="cta-inner">
@@ -1603,25 +1806,33 @@
       <div class="cta-product-info fade-in">
         <p class="cta-product-name">ボタニカルピュアオイル</p>
         <p class="cta-product-volume">Botanical Pure Oil / 100ml</p>
-        <div style="display:flex; gap:2rem; align-items:flex-end; margin:1rem 0 0.5rem; flex-wrap:wrap;">
-          <div>
-            <p style="font-size:0.72rem; color:var(--text-light); letter-spacing:0.1em; margin-bottom:0.2rem;">通常購入</p>
-            <p class="cta-price">¥7,700<span class="cta-price-tax">（税込）</span></p>
+        <div class="cta-pricing-wrap fade-in">
+          <!-- 定期便 (強調) -->
+          <div class="cta-plan cta-plan-subscription">
+            <div class="cta-plan-badge">✦ いちばん人気</div>
+            <p class="cta-plan-label">定期便</p>
+            <p class="cta-plan-price">¥7,000<span style="font-size:0.68rem; color:var(--text-light); margin-left:0.2rem;">（税込）</span></p>
+            <p class="cta-plan-saving">通常購入より ¥700 お得</p>
+            <a href="https://proteaoil.stores.jp/" target="_blank" rel="noopener noreferrer" class="btn-primary-cta">定期便で購入する</a>
+            <p class="cta-plan-cancel-note">いつでも解約できます</p>
           </div>
-          <div>
-            <p style="font-size:0.72rem; color:var(--gold); letter-spacing:0.1em; margin-bottom:0.2rem; font-weight:500;">定期便（お得）</p>
-            <p class="cta-price" style="font-size:1.6rem;">¥7,000<span class="cta-price-tax">（税込）</span></p>
+          <!-- 通常購入 (サブ) -->
+          <div class="cta-plan cta-plan-single">
+            <p class="cta-plan-label">通常購入</p>
+            <p class="cta-plan-price">¥7,700<span style="font-size:0.68rem; color:var(--text-light); margin-left:0.2rem;">（税込）</span></p>
+            <p style="font-size:0.7rem; color:var(--text-light); margin-bottom:1.5rem; letter-spacing:0.05em;">まずは1本からお試し</p>
+            <a href="https://proteaoil.stores.jp/" target="_blank" rel="noopener noreferrer" class="btn-outline-cta">通常購入はこちら</a>
           </div>
         </div>
-        <div class="cta-notes">
+        <p style="font-size:0.68rem; color:var(--text-light); text-align:center; margin-top:1.2rem; letter-spacing:0.04em;">※ どちらのボタンも購入ページへ移動します。ご購入時にプランをお選びください。</p>
+        <div class="cta-notes" style="margin-top:1.5rem;">
           <p>✦ 香り：ベルガモット / グレープフルーツ（NEW）よりお選びください</p>
-          <p>✦ 現在 <strong style="color:var(--green-deep);">予約販売中</strong>（発送準備が整い次第お届け）</p>
+          <p>✦ 現在 <strong style="color:var(--green-mid); font-weight:500;">予約販売中</strong>（発送準備が整い次第お届け）</p>
           <p>✦ 送料全国一律</p>
           <p>✦ 公式LINEご登録でクーポンコードをプレゼント</p>
         </div>
       </div>
       <div class="cta-actions fade-in">
-        <a href="https://proteaoil.stores.jp/" target="_blank" rel="noopener noreferrer" class="btn-primary">STORESで購入する</a>
         <p class="cta-line-note">公式LINEに登録すると500円OFFクーポンが届きます</p>
       </div>
     </div>
@@ -1724,9 +1935,9 @@
         <div>
           <p class="footer-col-title">Links</p>
           <div class="footer-links">
+            <a href="#testimonials">お客様の変化</a>
             <a href="#product-intro">商品について</a>
             <a href="#how-to-use">使い方</a>
-            <a href="#testimonials">お客様の声</a>
             <a href="#brand-story">ブランドストーリー</a>
             <a href="#faq">よくある質問</a>
           </div>
