@@ -720,7 +720,7 @@
     }
     .testimonials-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(4, 1fr);
       gap: 1.5rem;
     }
     .testimonial-card {
@@ -1206,7 +1206,7 @@
     }
     .value-reasons {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(4, 1fr);
       gap: 1.5rem;
     }
     .value-reason {
@@ -1409,6 +1409,269 @@
       .cta-plan { min-width: unset; }
       .cta-plan-subscription .cta-plan-price { font-size: 2.2rem; }
     }
+
+    /* ===== HERO 2段目 ===== */
+    .hero-title-2 {
+      font-family: 'Noto Serif JP', serif;
+      font-size: clamp(0.95rem, 1.8vw, 1.25rem);
+      font-weight: 300;
+      color: var(--text-mid);
+      line-height: 1.9;
+      margin-bottom: 2.5rem;
+      letter-spacing: 0.04em;
+    }
+    .hero-title-2 em {
+      font-style: italic;
+      color: var(--gold);
+      font-family: 'Noto Serif JP', serif;
+    }
+    .hero-betatsuki {
+      margin-bottom: 2rem;
+      padding: 1.4rem 1.6rem;
+      background: rgba(201,168,122,0.08);
+      border-left: 2px solid var(--gold-light);
+    }
+    .hero-betatsuki-title {
+      font-family: 'Noto Serif JP', serif;
+      font-size: clamp(1rem, 1.8vw, 1.3rem);
+      font-weight: 400;
+      color: var(--green-deep);
+      margin-bottom: 0.6rem;
+    }
+    .hero-betatsuki-body {
+      font-size: 0.82rem;
+      color: var(--text-mid);
+      line-height: 2;
+    }
+    .hero-sub-copy {
+      font-size: 0.9rem;
+      color: var(--text-mid);
+      line-height: 2;
+      margin-bottom: 1.2rem;
+    }
+
+    /* ===== WHY NO STICKY SECTION ===== */
+    #why-no-sticky {
+      padding: 8rem 0;
+      background: var(--white);
+    }
+    .why-inner {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 2rem;
+      text-align: center;
+    }
+    .why-blocks {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      margin-top: 4rem;
+      text-align: left;
+    }
+    .why-block {
+      padding: 2.5rem 2rem;
+      background: var(--cream-light);
+      border-top: 2px solid var(--gold-light);
+    }
+    .why-block-label {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.72rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.8rem;
+      display: block;
+    }
+    .why-block-title {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 1rem;
+      font-weight: 400;
+      color: var(--green-deep);
+      margin-bottom: 1rem;
+      line-height: 1.6;
+    }
+    .why-block-body {
+      font-size: 0.85rem;
+      color: var(--text-mid);
+      line-height: 2.1;
+    }
+    .why-closing {
+      margin-top: 4rem;
+      font-family: 'Noto Serif JP', serif;
+      font-size: clamp(1rem, 2vw, 1.4rem);
+      font-weight: 300;
+      color: var(--green-deep);
+      line-height: 1.9;
+    }
+    @media (max-width: 640px) {
+      .why-blocks { grid-template-columns: 1fr; gap: 1.5rem; }
+    }
+
+    /* ===== PROBLEM BETATSUKI ===== */
+    .problem-betatsuki {
+      margin-top: 3rem;
+      padding: 2.5rem 2rem;
+      background: var(--cream-light);
+      border-left: 3px solid var(--gold-light);
+    }
+    .problem-betatsuki-title {
+      font-family: 'Noto Serif JP', serif;
+      font-size: clamp(1.4rem, 2.8vw, 2.2rem);
+      font-weight: 400;
+      color: var(--green-deep);
+      margin-bottom: 1rem;
+    }
+    .problem-betatsuki-body {
+      font-size: 0.88rem;
+      color: var(--text-mid);
+      line-height: 2.2;
+    }
+
+    /* ===== HOW TO USE REVISED ===== */
+    .how-detail-intro {
+      font-size: 0.9rem;
+      color: var(--text-mid);
+      line-height: 2;
+      margin-bottom: 3rem;
+      text-align: center;
+    }
+    .how-cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.2rem;
+      max-width: 1060px;
+      margin: 0 auto;
+    }
+    .how-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      overflow: hidden;
+      transition: box-shadow 0.3s ease;
+      display: flex;
+      flex-direction: column;
+    }
+    .how-card:hover { box-shadow: 0 4px 20px rgba(43,61,44,0.08); }
+    /* 写真エリア */
+    .how-card-photo {
+      width: 100%;
+      height: 160px;
+      overflow: hidden;
+      background: var(--cream-light);
+      flex-shrink: 0;
+      position: relative;
+    }
+    .how-card-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .how-card-photo-placeholder {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 0.5rem;
+      color: var(--text-light);
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      font-family: 'Cormorant Garamond', serif;
+    }
+    .how-card-photo-placeholder svg { width: 28px; height: 28px; stroke: var(--gold-light); fill: none; stroke-width: 1; opacity: 0.6; }
+    .how-card-top {
+      background: var(--cream-light);
+      border-bottom: 1px solid var(--border);
+      border-top: 1px solid var(--border);
+      padding: 0.9rem 1.2rem;
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+    }
+    .how-card-title-wrap { flex: 1; }
+    .how-card-title {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 0.92rem;
+      font-weight: 400;
+      color: var(--green-deep);
+      line-height: 1.4;
+      margin-bottom: 0.25rem;
+    }
+    .how-card-amount {
+      display: inline-block;
+      background: var(--green-deep);
+      color: var(--white);
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.76rem;
+      letter-spacing: 0.1em;
+      padding: 0.15rem 0.65rem;
+      border-radius: 2px;
+    }
+    .how-card-body {
+      padding: 1rem 1.2rem 1.2rem;
+      flex: 1;
+    }
+    .how-scene-label {
+      font-size: 0.68rem;
+      color: var(--gold);
+      letter-spacing: 0.15em;
+      font-family: 'Cormorant Garamond', serif;
+      text-transform: uppercase;
+      margin-bottom: 0.25rem;
+      margin-top: 0.7rem;
+      display: block;
+    }
+    .how-scene-label:first-child { margin-top: 0; }
+    .how-step-item {
+      display: flex;
+      gap: 0.6rem;
+      font-size: 0.8rem;
+      color: var(--text-mid);
+      line-height: 1.85;
+      margin-bottom: 0.25rem;
+    }
+    .how-step-dot {
+      width: 5px;
+      height: 5px;
+      background: var(--gold);
+      border-radius: 50%;
+      flex-shrink: 0;
+      margin-top: 0.6rem;
+    }
+    .how-step-box {
+      margin-top: 0.8rem;
+      background: var(--cream-light);
+      border-left: 2px solid var(--gold);
+      padding: 0.8rem 1rem;
+    }
+    .how-step-box-title {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 0.78rem;
+      font-weight: 400;
+      color: var(--green-deep);
+      margin-bottom: 0.4rem;
+    }
+    .how-step-box p {
+      font-size: 0.78rem;
+      color: var(--text-mid);
+      line-height: 1.9;
+    }
+    .how-note-text {
+      font-size: 0.75rem;
+      color: var(--text-light);
+      line-height: 1.85;
+      margin-top: 0.7rem;
+      padding-top: 0.7rem;
+      border-top: 1px solid var(--border);
+    }
+    @media (max-width: 900px) {
+      .how-cards { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 560px) {
+      .how-cards { grid-template-columns: 1fr; }
+      .how-card-photo { height: 180px; }
+    }
   </style>
 </head>
 <body>
@@ -1440,14 +1703,18 @@
     <div class="hero-content">
       <span class="hero-badge">Plant Oil Beauty — Since 2024</span>
       <h1 class="hero-title">
-        肌には、新鮮なオイルが<br />
-        <em>たっぷり</em>必要だった。
+        潤いの鍵は水分じゃない。<br />
+        大切なのは、<br />
+        それを<em>閉じ込める</em>オイル。
       </h1>
-      <p class="hero-desc">
-        オイルがべたつくのは、設計の問題じゃない。<br />
-        古くなった油が、肌に残るから。<br />
-        新鮮なまま届けるPROTEAは、べたつかない。
+      <p class="hero-sub-copy">しっかりうるおう水分と、たっぷりのオイル。</p>
+      <p class="hero-title-2">
+        肌には<em>新鮮な</em>オイルが<em>たっぷり</em>必要だった。
       </p>
+      <div class="hero-betatsuki">
+        <p class="hero-betatsuki-title">たっぷり使ってもべたつかないオイル？</p>
+        <p class="hero-betatsuki-body">べたつきの正体は、量じゃない。オイルの性質と、鮮度。<br />重いオイル・軽いオイルがあり、酸化が進むほど感触も変わる。<br />べたつかない理由は、ひとつじゃない。オイルの設計と、鮮度。両方にこだわった。</p>
+      </div>
       <div class="hero-actions">
         <a href="https://proteaoil.stores.jp/" target="_blank" rel="noopener noreferrer" class="btn-primary">今すぐ購入する</a>
         <a href="#product-intro" class="btn-outline">商品を詳しく見る</a>
@@ -1464,8 +1731,8 @@
   <section id="problem">
     <div class="problem-inner">
       <p class="problem-intro fade-in">
-        オイルは、<br />
-        べたつくもの<span>ですか？</span>
+        高ければいい<br />
+        というのじゃない
       </p>
       <div class="problem-list">
         <div class="problem-item fade-in">
@@ -1473,12 +1740,6 @@
             <circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/>
           </svg>
           <p class="problem-text">高いオイルだから、ケチって少ししか使えない。結果、ボトルの中でゆっくりと酸化していく。</p>
-        </div>
-        <div class="problem-item fade-in">
-          <svg class="problem-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-            <circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/>
-          </svg>
-          <p class="problem-text">古くなった油は有効成分が分解され、余分な脂質が残る。それが肌に乗るから、べたつく。オイルが悪いんじゃなく、<strong>鮮度の問題。</strong></p>
         </div>
         <div class="problem-item fade-in">
           <svg class="problem-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
@@ -1493,9 +1754,28 @@
           <p class="problem-text">大量生産のオイルは、製造から店頭に並ぶまでに時間がかかる。あなたの手元に届く頃には、すでに鮮度が落ちている。</p>
         </div>
       </div>
-      <p class="problem-closing fade-in">
-        新鮮なオイルを、たっぷり使う。<br />たったそれだけで、肌は変わる。
-      </p>
+      <p class="problem-closing fade-in">新鮮なオイルを、たっぷり使う。<br />たったそれだけで、肌の調子が整ってきます。</p>
+    </div>
+  </section>
+
+  <!-- ===== WHY NO STICKY SECTION ===== -->
+  <section id="why-no-sticky">
+    <div class="why-inner">
+      <span class="section-label fade-in">Why PROTEA</span>
+      <h2 class="section-title fade-in">プロテアはなぜ、<br />べたつかないのか。</h2>
+      <div class="why-blocks">
+        <div class="why-block fade-in">
+          <span class="why-block-label">Reason 01 / Formulation</span>
+          <h3 class="why-block-title">なぜべたつかないのか</h3>
+          <p class="why-block-body">軽いオイルを主役に。配合のバランスで、べたつかない使用感を設計しました。肌にすっとなじみ、時間が経っても重たくならない、そんなテクスチャーを追求しています。</p>
+        </div>
+        <div class="why-block fade-in fade-in-delay-1">
+          <span class="why-block-label">Reason 02 / Freshness</span>
+          <h3 class="why-block-title">そしてもう一つ、こだわったこと</h3>
+          <p class="why-block-body">鮮度のいいうちに、小ロットで。防腐剤・界面活性剤不使用で、植物の恵みだけをそのまま届けます。作りたてだから、本来の軽さが保たれています。</p>
+        </div>
+      </div>
+      <p class="why-closing fade-in">べたつかない理由は一つじゃない。<br />配合と鮮度、両方にこだわった。</p>
     </div>
   </section>
 
@@ -1506,24 +1786,60 @@
         <span class="section-label">Before → After</span>
         <h2 class="section-title">実際に使っていただいた方の<em style="font-style:normal;">変化</em></h2>
       </div>
-      <div class="testimonials-grid">
+      <div class="testimonials-grid" style="grid-template-columns: repeat(3, 1fr);">
         <div class="testimonial-card fade-in">
           <div class="testimonial-quote">"</div>
-          <p class="testimonial-body">1ヶ月続けたら肌が変わって、撮影の日に「肌きれいですね」って褒められました。毎年花粉で荒れていたのに、今年はそれも感じなくて驚いています。</p>
-          <p class="testimonial-highlight">花粉の季節もしっかり乗り越えられました</p>
-          <p class="testimonial-author">30代女性</p>
+          <p class="testimonial-body">毎日仕事から帰り手洗い後、顔全体に。お風呂後すぐ、朝からプルプルお肌です。元々肌が弱い私にも大丈夫でした。香りも最高に癒されています。</p>
+          <p class="testimonial-highlight">肌が弱い私でも安心して使えました</p>
+          <p class="testimonial-author">50代女性</p>
         </div>
         <div class="testimonial-card fade-in fade-in-delay-1">
-          <div class="testimonial-quote">"</div>
-          <p class="testimonial-body">忙しくてスキンケアが続かなかったのに、これだけはちゃんと続けられています。夜にさっとなじませるだけで翌朝の肌の感触が全然違う。</p>
-          <p class="testimonial-highlight">翌朝の肌の感触が変わりました</p>
-          <p class="testimonial-author">20代女性</p>
-        </div>
-        <div class="testimonial-card fade-in fade-in-delay-2">
           <div class="testimonial-quote">"</div>
           <p class="testimonial-body">オイルってベタつくイメージがあったけど、これは全然違う。髪にも使えるので洗面台がすっきりしました。香りも自然で毎日使うのが楽しみです。</p>
           <p class="testimonial-highlight">顔にも髪にも使えてとても便利</p>
           <p class="testimonial-author">30代女性</p>
+        </div>
+        <div class="testimonial-card fade-in fade-in-delay-2">
+          <div class="testimonial-quote">"</div>
+          <p class="testimonial-body">親子でおなじものを使えるしあわせをありがとうございます。オイルなのにさっぱり使えて、男の子にも嬉しい。</p>
+          <p class="testimonial-highlight">親子で使える、家族みんなのオイル</p>
+          <p class="testimonial-author">30代女性</p>
+        </div>
+        <div class="testimonial-card fade-in">
+          <div class="testimonial-quote">"</div>
+          <p class="testimonial-body">コテやドライヤーの前にオイルをなじませるだけで、仕上がりのツヤが全然違います。熱によるダメージが気になっていたけど、サラサラでまとまりのある髪をキープできるようになりました。</p>
+          <p class="testimonial-highlight">コテ前の一滴で、まとまる髪へ</p>
+          <p class="testimonial-author">30代女性</p>
+        </div>
+        <div class="testimonial-card fade-in fade-in-delay-1">
+          <div class="testimonial-quote">"</div>
+          <p class="testimonial-body">爪が乾燥して割れやすいのが悩みでしたが、ハンドケアのついでに爪にもなじませるようにしたら、しなやかになってうれしいです。べたつかないからケアの後すぐ家事もできちゃうのも、本当にありがたいです。</p>
+          <p class="testimonial-highlight">ハンドケアのついでに、爪まで整う</p>
+          <p class="testimonial-author">30代女性</p>
+        </div>
+        <div class="testimonial-card fade-in fade-in-delay-2">
+          <div class="testimonial-quote">"</div>
+          <p class="testimonial-body">年齢とともに首のしわが気になり、スキンケアのあと、髪と首のマッサージに使っています。ベルガモットの香りはやわらかくて深みがあって、使うたびにふっと息が抜ける感じ。</p>
+          <p class="testimonial-highlight">髪と首のマッサージに、毎日のご褒美タイム</p>
+          <p class="testimonial-author">60代女性</p>
+        </div>
+        <div class="testimonial-card fade-in">
+          <div class="testimonial-quote">"</div>
+          <p class="testimonial-body">3本目のリピートです。夜のスキンケアにプラスするようになったら、翌朝化粧のりが悪いという日がなくなりました。ヘアセットにも使わせてもらっています。雨の日でも朝セットした毛束感が１日キープできるのが嬉しいです。</p>
+          <p class="testimonial-highlight">3本目のリピート、肌にも髪にも手放せません</p>
+          <p class="testimonial-author">30代女性</p>
+        </div>
+        <div class="testimonial-card fade-in fade-in-delay-1">
+          <div class="testimonial-quote">"</div>
+          <p class="testimonial-body">顔・髪・手と全身に使っています。オイルなのにべたつかず、すっと肌になじんでくれるから、塗った後すぐに次のことができるのがすごく助かります。化粧水の前にブースターとして顔にオイルマッサージするのが最近のお気に入りです。</p>
+          <p class="testimonial-highlight">化粧水前のブースターとしても優秀</p>
+          <p class="testimonial-author">40代女性</p>
+        </div>
+        <div class="testimonial-card fade-in fade-in-delay-2">
+          <div class="testimonial-quote">"</div>
+          <p class="testimonial-body">髪に少量なじませるだけでさらさら＆ツヤ感が出るのも嬉しいです。子どもの手足のマッサージにも使っていて、自然由来の成分だから安心して使えるのも◎。香りはフレッシュで本物のグレープフルーツみたいな香り。朝使うと気分がパッと明るくなります！</p>
+          <p class="testimonial-highlight">家族みんなで使える、全身マルチオイル</p>
+          <p class="testimonial-author">40代女性</p>
         </div>
       </div>
     </div>
@@ -1541,7 +1857,7 @@
           <p class="product-intro-tagline">Botanical Pure Oil / 100ml</p>
           <p class="product-intro-body">
             PROTEAオイルは、ベタつかずすっと肌になじんで、必要な分だけうるおいを残す設計の植物オイルです。<br /><br />
-            顔の保湿はもちろん、髪のまとまりやからだの乾燥ケアまで、これひとつで対応できます。夜のケアにも、朝のスタイリングにも。忙しい毎日の中でも、さっとなじませるだけで肌の状態が変わっていくことを実感してください。
+            顔の保湿はもちろん、髪のまとまりやからだの乾燥ケアまで、これひとつで対応できます。夜のケアにも、朝のスタイリングにも。忙しい毎日の中でも、さっとなじませるだけで肌へのなじみを実感してください。
           </p>
           <div class="product-tags">
             <span class="product-tag">ノンシリコン</span>
@@ -1606,28 +1922,144 @@
       <div class="how-header fade-in">
         <span class="section-label">How to Use</span>
         <h2 class="section-title">使い方</h2>
-        <p class="section-subtitle" style="font-family:'Noto Serif JP',serif; font-size:1rem; color:var(--green-deep); margin-bottom:0.5rem;">1プッシュでOK。難しい使い方は、一切ありません。</p>
-        <p class="section-subtitle">洗顔後の清潔な肌に、1〜3滴を手のひらで温めてからお使いください。</p>
       </div>
-      <div class="how-grid">
-        <div class="how-item fade-in">
-          <span class="how-step">Use 01 / Face</span>
-          <div class="how-visual">FACE IMAGE</div>
-          <h3 class="how-title">顔のスキンケアに</h3>
-          <p class="how-body">洗顔後、または化粧水の後に1〜2滴。手のひらに広げて、顔全体を包み込むようになじませます。ツヤ感のある肌に。</p>
+      <p class="how-detail-intro fade-in">お手入れの目的にあわせて、適量を手のひらでとってお使いください。</p>
+      <div class="how-cards">
+
+        <!-- デイリーケア -->
+        <div class="how-card fade-in">
+          <div class="how-card-photo">
+            <div class="how-card-photo-placeholder"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>DAILY CARE</div>
+          </div>
+          <div class="how-card-top">
+            <div class="how-card-icon">
+              <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><line x1="12" y1="2" x2="12" y2="4"/><line x1="12" y1="20" x2="12" y2="22"/><line x1="2" y1="12" x2="4" y2="12"/><line x1="20" y1="12" x2="22" y2="12"/><line x1="4.93" y1="4.93" x2="6.34" y2="6.34"/><line x1="17.66" y1="17.66" x2="19.07" y2="19.07"/><line x1="4.93" y1="19.07" x2="6.34" y2="17.66"/><line x1="17.66" y1="6.34" x2="19.07" y2="4.93"/></svg>
+            </div>
+            <div class="how-card-title-wrap">
+              <p class="how-card-title">デイリーケアに</p>
+              <span class="how-card-amount">1〜2滴</span>
+            </div>
+          </div>
+          <div class="how-card-body">
+            <span class="how-scene-label">べたつかずなじませたい時</span>
+            <div class="how-step-item"><span class="how-step-dot"></span><span>洗顔後、手のひらに広げて軽くなじませます。</span></div>
+            <span class="how-scene-label">乾燥が気になる時</span>
+            <div class="how-step-item"><span class="how-step-dot"></span><span>メイクの前、保湿として軽くなじませます。</span></div>
+          </div>
         </div>
-        <div class="how-item fade-in fade-in-delay-1">
-          <span class="how-step">Use 02 / Hair</span>
-          <div class="how-visual">HAIR IMAGE</div>
-          <h3 class="how-title">髪のケアに</h3>
-          <p class="how-body">タオルドライ後の濡れた髪に1〜2滴。毛先を中心になじませてからドライヤーで乾かします。乾いた髪のまとまりにも。</p>
+
+        <!-- ブースター -->
+        <div class="how-card fade-in fade-in-delay-1">
+          <div class="how-card-photo">
+            <div class="how-card-photo-placeholder"><svg viewBox="0 0 24 24"><path d="M12 2C12 2 6 10 6 15a6 6 0 0 0 12 0C18 10 12 2 12 2z"/></svg>BOOSTER</div>
+          </div>
+          <div class="how-card-top">
+            <div class="how-card-icon">
+              <svg viewBox="0 0 24 24"><path d="M12 2 C12 2 6 10 6 15 a6 6 0 0 0 12 0 C18 10 12 2 12 2z"/><path d="M9 17 C9 18.5 10.5 19.5 12 19.5"/></svg>
+            </div>
+            <div class="how-card-title-wrap">
+              <p class="how-card-title">ブースターとして</p>
+              <span class="how-card-amount">1〜2滴</span>
+            </div>
+          </div>
+          <div class="how-card-body">
+            <div class="how-step-item"><span class="how-step-dot"></span><span>オイルを肌になじませることで、肌がやわらかくなり、ごわつきが気になる部分にもなじみやすい状態に。</span></div>
+            <div class="how-step-item"><span class="how-step-dot"></span><span>PROTEAはさらっとしたテクスチャーなので、化粧水の前にもおすすめです。</span></div>
+            <div class="how-step-box">
+              <p class="how-step-box-title">✦ 3ステップで使う</p>
+              <p>① オイルでマッサージし、肌をやわらかい状態に整える<br />② 化粧水をなじませる<br />③ シートマスクでうるおいを閉じ込める</p>
+            </div>
+          </div>
         </div>
-        <div class="how-item fade-in fade-in-delay-2">
-          <span class="how-step">Use 03 / Body</span>
-          <div class="how-visual">BODY IMAGE</div>
-          <h3 class="how-title">からだの保湿に</h3>
-          <p class="how-body">入浴後の濡れた肌、またはボディクリームの前に。全身に薄くなじませるだけで、乾燥が気になる部分もしっとりと整います。</p>
+
+        <!-- スペシャルケア -->
+        <div class="how-card fade-in">
+          <div class="how-card-photo">
+            <div class="how-card-photo-placeholder"><svg viewBox="0 0 24 24"><path d="M4 20C4 20 4 14 12 14C20 14 20 20 20 20"/><ellipse cx="12" cy="9" rx="4" ry="5"/></svg>SPECIAL CARE</div>
+          </div>
+          <div class="how-card-top">
+            <div class="how-card-icon">
+              <svg viewBox="0 0 24 24"><path d="M4 20 C4 20 4 14 12 14 C20 14 20 20 20 20"/><ellipse cx="12" cy="9" rx="4" ry="5"/><path d="M8 7 C8 5 10 3 12 3 C14 3 16 5 16 7"/></svg>
+            </div>
+            <div class="how-card-title-wrap">
+              <p class="how-card-title">スペシャルケア・<br />オイルマッサージに</p>
+              <span class="how-card-amount">1プッシュ</span>
+            </div>
+          </div>
+          <div class="how-card-body">
+            <span class="how-scene-label">おすすめのタイミング</span>
+            <div class="how-step-item"><span class="how-step-dot"></span><span>入浴中、湯気で肌がやわらかくなったタイミングで。</span></div>
+            <div class="how-step-item"><span class="how-step-dot"></span><span>入浴後、水分が肌に残っているうちに。</span></div>
+            <div class="how-step-item"><span class="how-step-dot"></span><span>朝、メイク前のスキンケアタイムに。</span></div>
+            <p class="how-note-text">顔の中心から外側に向かって軽くマッサージ。気になる場合はティッシュで軽くオフ。化粧水パックもおすすめ。</p>
+          </div>
         </div>
+
+        <!-- ヘアケア -->
+        <div class="how-card fade-in fade-in-delay-1">
+          <div class="how-card-photo">
+            <div class="how-card-photo-placeholder"><svg viewBox="0 0 24 24"><path d="M7 3C7 3 5 8 8 11L8 21"/><path d="M12 3L12 21"/><path d="M17 3C17 3 19 8 16 11L16 21"/></svg>HAIR CARE</div>
+          </div>
+          <div class="how-card-top">
+            <div class="how-card-icon">
+              <svg viewBox="0 0 24 24"><path d="M7 3 C7 3 5 8 8 11 L8 21"/><path d="M12 3 C12 3 12 8 12 21"/><path d="M17 3 C17 3 19 8 16 11 L16 21"/><path d="M8 15 C10 13 14 13 16 15"/></svg>
+            </div>
+            <div class="how-card-title-wrap">
+              <p class="how-card-title">ヘアケアに</p>
+              <span class="how-card-amount">1〜2滴</span>
+            </div>
+          </div>
+          <div class="how-card-body">
+            <span class="how-scene-label">洗髪後のケアに</span>
+            <div class="how-step-item"><span class="how-step-dot"></span><span>タオルドライ後、手のひらにのばして髪全体へ。特に毛先から。</span></div>
+            <span class="how-scene-label">スタイリング前に</span>
+            <div class="how-step-item"><span class="how-step-dot"></span><span>コテ・ドライヤーの前に少量なじませると、ツヤとまとまりが続きます。</span></div>
+          </div>
+        </div>
+
+        <!-- ボディケア -->
+        <div class="how-card fade-in">
+          <div class="how-card-photo">
+            <div class="how-card-photo-placeholder"><svg viewBox="0 0 24 24"><path d="M12 3C12 3 8 6 8 10L8 20C8 21 9 22 10 22L14 22C15 22 16 21 16 20L16 10C16 6 12 3 12 3z"/></svg>BODY CARE</div>
+          </div>
+          <div class="how-card-top">
+            <div class="how-card-icon">
+              <svg viewBox="0 0 24 24"><path d="M12 3 C12 3 8 6 8 10 L8 20 C8 21 9 22 10 22 L14 22 C15 22 16 21 16 20 L16 10 C16 6 12 3 12 3z"/><line x1="8" y1="14" x2="16" y2="14"/></svg>
+            </div>
+            <div class="how-card-title-wrap">
+              <p class="how-card-title">ボディケアに</p>
+              <span class="how-card-amount">1〜2滴</span>
+            </div>
+          </div>
+          <div class="how-card-body">
+            <span class="how-scene-label">部分ケアに</span>
+            <div class="how-step-item"><span class="how-step-dot"></span><span>ひじ・ひざ・かかとなど乾燥が気になる部分に軽くマッサージ。</span></div>
+            <span class="how-scene-label">入浴後の全身に</span>
+            <div class="how-step-item"><span class="how-step-dot"></span><span>お風呂上がり、全身に軽くマッサージするようになじませます。</span></div>
+          </div>
+        </div>
+
+        <!-- ハンドケア・ネイルケア -->
+        <div class="how-card fade-in fade-in-delay-1">
+          <div class="how-card-photo">
+            <div class="how-card-photo-placeholder"><svg viewBox="0 0 24 24"><path d="M8 4L8 14"/><path d="M11 3L11 14"/><path d="M14 4L14 14"/><path d="M17 7L17 14C17 14 18 17 17 19C16 21 13 22 10 21C7 20 5 17 5 14L5 12C5 12 6 11 8 12"/></svg>HAND &amp; NAIL</div>
+          </div>
+          <div class="how-card-top">
+            <div class="how-card-icon">
+              <svg viewBox="0 0 24 24"><path d="M8 4 L8 14"/><path d="M11 3 L11 14"/><path d="M14 4 L14 14"/><path d="M17 7 L17 14"/><path d="M17 14 C17 14 18 17 17 19 C16 21 13 22 10 21 C7 20 5 17 5 14 L5 12 C5 12 6 11 8 12"/></svg>
+            </div>
+            <div class="how-card-title-wrap">
+              <p class="how-card-title">ハンドケア・<br />ネイルケアに</p>
+              <span class="how-card-amount">1〜2滴</span>
+            </div>
+          </div>
+          <div class="how-card-body">
+            <div class="how-step-item"><span class="how-step-dot"></span><span>ハンドクリームの代わりに、手全体になじませます。</span></div>
+            <div class="how-step-item"><span class="how-step-dot"></span><span>爪の際まで少量をなじませると、乾燥や割れを防ぎます。</span></div>
+            <p class="how-note-text">べたつかないからケアのあとすぐ家事もできます。</p>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
@@ -1672,12 +2104,12 @@
           <div class="ingredient-card fade-in">
             <div class="ingredient-icon">✦</div>
             <h3 class="ingredient-name">植物性脂肪酸</h3>
-            <p class="ingredient-desc">乾燥しやすい肌をやさしく守り、肌バリアの土台を整えるサポートをします。</p>
+            <p class="ingredient-desc">乾燥しやすい肌をやさしく守り、肌をやさしく保護するサポートをします。</p>
           </div>
           <div class="ingredient-card fade-in fade-in-delay-1">
             <div class="ingredient-icon">✦</div>
             <h3 class="ingredient-name">保湿植物オイル</h3>
-            <p class="ingredient-desc">さらっとした使用感でありながら、うるおいを逃がさず長時間キープします。</p>
+            <p class="ingredient-desc">さらっとした使用感でありながら、うるおいをサポートします。</p>
           </div>
           <div class="ingredient-card fade-in fade-in-delay-2">
             <div class="ingredient-icon">✦</div>
@@ -1719,27 +2151,10 @@
   <section id="value">
     <div class="value-inner">
       <div class="value-header fade-in">
-        <span class="section-label" style="color:var(--gold);">Value</span>
+        <span class="section-label" style="color:var(--gold-light);">Value</span>
         <h2 class="value-headline">
-          同等成分のデパコスオイル（参考価格<span>¥16,500</span>前後）と比べて、<br />なぜ<span>¥7,700</span>で届けられるのか。
+          同等成分のデパコスオイル<br />（参考価格¥16,500前後）と比べて、<br />なぜ¥7,700で届けられるのか。
         </h2>
-        <p class="value-subline">デパコスブランドのマルチオイルと同等の植物オイルを使用（参考価格比）。その価格差、約5分の1。</p>
-      </div>
-      <div class="value-compare fade-in">
-        <div class="value-product">
-          <p class="value-product-brand">デパコスブランド / マルチオイル</p>
-          <p class="value-product-name">百貨店ブランドの<br />マルチビューティーオイル</p>
-          <p style="font-size:0.65rem;color:rgba(255,255,255,0.4);letter-spacing:0.1em;margin-bottom:0.3rem;">参考価格</p>
-          <p class="value-product-price">¥16,500</p>
-          <p class="value-product-per">40ml / 1mlあたり ¥412（参考）</p>
-        </div>
-        <div class="value-vs">vs</div>
-        <div class="value-product highlight">
-          <p class="value-product-brand">PROTEA</p>
-          <p class="value-product-name">ボタニカル<br />ピュアオイル</p>
-          <p class="value-product-price">¥7,700</p>
-          <p class="value-product-per">100ml / 1mlあたり ¥77</p>
-        </div>
       </div>
       <div class="value-reasons fade-in">
         <div class="value-reason">
@@ -1757,6 +2172,11 @@
           <h3 class="value-reason-title">パッケージより中身に投資</h3>
           <p class="value-reason-body">豪華な箱や広告費より、処方の質にこだわる。これがPROTEAの価値哲学です。</p>
         </div>
+        <div class="value-reason">
+          <div class="value-reason-num">04</div>
+          <h3 class="value-reason-title">同等品の約5分の1の価格</h3>
+          <p class="value-reason-body">デパコスブランドのマルチオイルと同等の植物オイルを使用（参考価格比）。その価格差、約5分の1。PROTEAが¥7,700で届けられる理由があります。</p>
+        </div>
       </div>
     </div>
   </section>
@@ -1773,20 +2193,25 @@
       <div class="multi-grid">
         <div class="multi-item fade-in">
           <div class="multi-icon">✦</div>
-          <h3>妊娠中・産後のケアに</h3>
-          <p>お腹まわりの保湿から全身ケアまで。合成香料・着色料不使用だから、妊娠中も安心して使えます。</p>
+          <h3>妊娠中・産後のケアにも</h3>
+          <p>お腹まわりの保湿から全身ケアまで。合成香料・着色料不使用。妊娠中のご使用はかかりつけの医師にご相談の上でお使いください。</p>
         </div>
         <div class="multi-item fade-in fade-in-delay-1">
           <div class="multi-icon">✦</div>
           <h3>赤ちゃん・子どもの<br />お肌にも</h3>
-          <p>デリケートな赤ちゃんの肌にも。お風呂上がりのスキンケアを、親子でいっしょに。</p>
+          <p>デリケートな肌にも配慮した植物由来の処方。お風呂上がりのスキンケアを、親子でいっしょに。<br /><small style="font-size:0.72rem; color:var(--text-light);">※乳幼児へのご使用は医師にご相談ください</small></p>
         </div>
         <div class="multi-item fade-in fade-in-delay-2">
           <div class="multi-icon">✦</div>
-          <h3>パパのスキンケアにも</h3>
+          <h3>男性のスキンケアにも</h3>
           <p>化粧水・乳液・ヘアオイルをこれ1本に。スキンケアをシンプルにしたい方にも喜ばれています。</p>
         </div>
         <div class="multi-item fade-in fade-in-delay-3">
+          <div class="multi-icon">✦</div>
+          <h3>ネイルケア・ハンドケアにも</h3>
+          <p>ハンドクリームの代わりに手全体に。爪の際まで少量なじませると、乾燥や割れを防ぎます。べたつかないからケアのあとすぐ家事もできます。</p>
+        </div>
+        <div class="multi-item fade-in">
           <div class="multi-icon">✦</div>
           <h3>大切な方へのギフトに</h3>
           <p>顔・髪・からだ全身に使えるマルチオイルは、世代を問わず喜ばれる贈り物です。</p>
@@ -1876,7 +2301,7 @@
         </div>
         <div class="faq-item">
           <button class="faq-question" onclick="toggleFaq(this)">
-            <span class="faq-question-text">朝と夜、どちらに使うのが効果的ですか？</span>
+            <span class="faq-question-text">朝と夜、おすすめの使い方は？</span>
             <span class="faq-toggle"></span>
           </button>
           <div class="faq-answer">
@@ -1923,7 +2348,6 @@
     </div>
   </section>
 
-  <!-- ===== PRIVACY POLICY ===== -->
   <!-- ===== FOOTER ===== -->
   <footer>
     <div class="footer-inner">
@@ -1945,26 +2369,28 @@
         <div>
           <p class="footer-col-title">Purchase</p>
           <div class="footer-links">
-            <a href="https://proteaoil.stores.jp/" target="_blank" rel="noopener noreferrer">STORESで購入する</a>
-            <a href="#line-section">LINE公式アカウント</a>
-            <a href="privacy-policy.html" target="_blank" rel="noopener noreferrer">プライバシーポリシー</a>
-            <a href="terms.html" target="_blank" rel="noopener noreferrer">利用規約</a>
+            <a href="https://proteaoil.stores.jp/" target="_blank" rel="noopener noreferrer">公式ストアで購入する</a>
           </div>
         </div>
       </div>
       <div class="footer-bottom">
-        <span class="footer-copy">© 2024–2026 PROTEA / Madoka. All rights reserved.</span>
-        <div style="display:flex; gap:1.5rem;">
-          <a href="privacy-policy.html" target="_blank" rel="noopener noreferrer" style="font-size:0.72rem; color:rgba(255,255,255,0.4); letter-spacing:0.1em; transition:color 0.2s;">Privacy Policy</a>
-          <a href="terms.html" target="_blank" rel="noopener noreferrer" style="font-size:0.72rem; color:rgba(255,255,255,0.4); letter-spacing:0.1em; transition:color 0.2s;">利用規約</a>
+        <p class="footer-copy">© 2024 PROTEA. All rights reserved.</p>
+        <div class="footer-links" style="flex-direction:row; gap:1.5rem;">
+          <a href="privacy-policy.html">プライバシーポリシー</a>
+          <a href="terms.html">特定商取引法に基づく表記</a>
         </div>
       </div>
     </div>
   </footer>
 
-  <!-- ===== SCRIPTS ===== -->
   <script>
-    // FAQ accordion
+    // ===== HAMBURGER MENU =====
+    function toggleMenu() {
+      const nav = document.querySelector('.header-nav');
+      nav.style.display = nav.style.display === 'flex' ? 'none' : 'flex';
+    }
+
+    // ===== FAQ ACCORDION =====
     function toggleFaq(btn) {
       const item = btn.closest('.faq-item');
       const isOpen = item.classList.contains('open');
@@ -1972,38 +2398,26 @@
       if (!isOpen) item.classList.add('open');
     }
 
-    // Mobile menu placeholder
-    function toggleMenu() {
-      // Add mobile menu logic if needed
-      const nav = document.querySelector('.header-nav');
-      if (nav.style.display === 'flex') {
-        nav.style.display = 'none';
-      } else {
-        nav.style.cssText = 'display:flex; flex-direction:column; position:fixed; top:0; left:0; right:0; bottom:0; background:rgba(250,250,247,0.98); z-index:200; align-items:center; justify-content:center; gap:2rem;';
-      }
-    }
-
-    // Scroll animations
+    // ===== SCROLL FADE-IN =====
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           entry.target.classList.add('visible');
         }
       });
-    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+    }, { threshold: 0.1 });
 
     document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 
-    // Header scroll effect
-    const header = document.getElementById('site-header');
+    // ===== HEADER SCROLL EFFECT =====
     window.addEventListener('scroll', () => {
+      const header = document.getElementById('site-header');
       if (window.scrollY > 50) {
-        header.style.boxShadow = '0 2px 20px rgba(0,0,0,0.06)';
+        header.style.boxShadow = '0 2px 20px rgba(0,0,0,0.08)';
       } else {
         header.style.boxShadow = 'none';
       }
     });
   </script>
-
 </body>
 </html>
