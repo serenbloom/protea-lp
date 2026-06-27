@@ -282,15 +282,7 @@
       font-size: 0.92rem;
       letter-spacing: 0.2em;
     }
-    .hero-image-placeholder::before {
-      content: '';
-      width: 80px;
-      height: 120px;
-      border: 1px solid var(--gold-light);
-      border-radius: 40px;
-      display: block;
-      background: linear-gradient(160deg, var(--gold-light) 0%, transparent 60%);
-    }
+    .hero-image-placeholder::before { display: none; }
     .hero-scroll {
       position: absolute;
       bottom: 2rem;
@@ -420,14 +412,7 @@
       letter-spacing: 0.2em;
       border: 1px solid var(--gold-light);
     }
-    .product-img-placeholder::before {
-      content: '';
-      width: 60px;
-      height: 90px;
-      border: 1px solid var(--gold-light);
-      border-radius: 30px;
-      background: linear-gradient(160deg, var(--gold-light) 0%, transparent 60%);
-    }
+    .product-img-placeholder::before { display: none; }
     .product-intro-content { }
     .product-intro-content .section-title { margin-bottom: 0.5rem; }
     .product-intro-name {
@@ -652,14 +637,7 @@
       font-size: 0.875rem;
       letter-spacing: 0.2em;
     }
-    .new-product-img::before {
-      content: '';
-      width: 60px;
-      height: 90px;
-      border: 1px solid rgba(255,255,255,0.2);
-      border-radius: 30px;
-      background: linear-gradient(160deg, rgba(201,168,122,0.3) 0%, transparent 60%);
-    }
+    .new-product-img::before { display: none; }
 
     /* ===================== INGREDIENTS ===================== */
     #ingredients {
@@ -775,6 +753,8 @@
       background: var(--cream);
       border: 1px solid var(--gold-light);
       display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
       align-items: center;
       justify-content: center;
       color: var(--text-light);
@@ -1748,7 +1728,7 @@
       </div>
     </div>
     <div class="hero-image">
-      <div class="hero-image-placeholder">PRODUCT IMAGE</div>
+      <div class="hero-image-placeholder"><svg viewBox="0 0 24 24" style="width:32px;height:32px;stroke:var(--gold-light);fill:none;stroke-width:1;opacity:0.8;"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>PRODUCT IMAGE</div>
       <div class="hero-scroll">Scroll</div>
     </div>
   </section>
@@ -1876,7 +1856,7 @@
   <section id="product-intro">
     <div class="container">
       <div class="product-intro-grid">
-        <div class="product-img-placeholder fade-in">PRODUCT IMAGE</div>
+        <div class="product-img-placeholder fade-in"><svg viewBox="0 0 24 24" style="width:32px;height:32px;stroke:var(--gold-light);fill:none;stroke-width:1;opacity:0.8;"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>PRODUCT IMAGE</div>
         <div class="product-intro-content fade-in fade-in-delay-1">
           <span class="section-label">About PROTEA</span>
           <p class="product-intro-name">PROTEA</p>
@@ -2117,7 +2097,7 @@
           </div>
           <a href="https://proteaoil.stores.jp/" target="_blank" rel="noopener noreferrer" class="btn-primary" style="background:var(--gold); border-color:var(--gold);">新商品を購入する</a>
         </div>
-        <div class="new-product-img fade-in fade-in-delay-1">NEW PRODUCT IMAGE</div>
+        <div class="new-product-img fade-in fade-in-delay-1"><svg viewBox="0 0 24 24" style="width:32px;height:32px;stroke:rgba(255,255,255,0.35);fill:none;stroke-width:1;"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>NEW PRODUCT IMAGE</div>
       </div>
     </div>
   </section>
@@ -2163,7 +2143,7 @@
   <section id="brand-story">
     <div class="container">
       <div class="story-grid">
-        <div class="story-img fade-in">BRAND IMAGE</div>
+        <div class="story-img fade-in"><svg viewBox="0 0 24 24" style="width:32px;height:32px;stroke:var(--gold-light);fill:none;stroke-width:1;opacity:0.8;"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>BRAND IMAGE</div>
         <div class="story-content fade-in fade-in-delay-1">
           <span class="section-label">Brand Story</span>
           <h2 class="section-title">眠れない夜が、<br />ずっと続いてた。<br />それでも、自分を<br />諦めたくなかった。</h2>
