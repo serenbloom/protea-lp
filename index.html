@@ -283,6 +283,14 @@
       letter-spacing: 0.2em;
     }
     .hero-image-placeholder::before { display: none; }
+    .hero-image-photo {
+      display: block;
+      width: 100%;
+      height: 100%;
+      min-height: 600px;
+      object-fit: cover;
+      object-position: center;
+    }
     .hero-scroll {
       position: absolute;
       bottom: 2rem;
@@ -414,6 +422,14 @@
       border: 1px solid var(--gold-light);
     }
     .product-img-placeholder::before { display: none; }
+    .product-img-photo {
+      display: block;
+      width: 100%;
+      aspect-ratio: 3/4;
+      object-fit: cover;
+      object-position: center;
+      border: 1px solid var(--gold-light);
+    }
     .product-intro-content { }
     .product-intro-content .section-title { margin-bottom: 0.5rem; }
     .product-intro-name {
@@ -641,6 +657,12 @@
       letter-spacing: 0.2em;
     }
     .new-product-img::before { display: none; }
+    img.new-product-img {
+      display: block;
+      width: 100%;
+      object-fit: cover;
+      border: 1px solid rgba(255,255,255,0.12);
+    }
 
     /* ===================== INGREDIENTS ===================== */
     #ingredients {
@@ -764,6 +786,12 @@
       font-family: 'Cormorant Garamond', serif;
       font-size: 0.875rem;
       letter-spacing: 0.2em;
+    }
+    img.story-img {
+      display: block;
+      width: 100%;
+      object-fit: cover;
+      object-position: center 25%;
     }
     .story-content { }
     .story-body {
@@ -1241,6 +1269,15 @@
     }
     #multi-use .section-title { text-align: left; margin-bottom: 0.6rem; }
     #multi-use .section-subtitle { text-align: left; color: var(--text-mid); font-size: 0.88rem; line-height: 1.9; margin-bottom: 4rem; }
+    .multi-use-image {
+      display: block;
+      width: 100%;
+      max-width: 900px;
+      aspect-ratio: 16/9;
+      object-fit: cover;
+      object-position: center 30%;
+      margin-bottom: 4rem;
+    }
     .multi-list {
       max-width: 900px;
     }
@@ -1472,6 +1509,16 @@
       margin: 0 auto;
       padding: 0 2rem;
       text-align: center;
+    }
+    .why-hero-img {
+      display: block;
+      width: 100%;
+      max-width: 420px;
+      aspect-ratio: 3/4;
+      object-fit: cover;
+      object-position: center 35%;
+      margin: 2.5rem auto 0;
+      border: 1px solid var(--gold-light);
     }
     .why-blocks {
       display: grid;
@@ -1766,7 +1813,7 @@
       </div>
     </div>
     <div class="hero-image">
-      <div class="hero-image-placeholder"><svg viewBox="0 0 24 24" style="width:32px;height:32px;stroke:var(--gold-light);fill:none;stroke-width:1;opacity:0.8;"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>PRODUCT IMAGE</div>
+      <img src="images/S__117039139.jpg" alt="PROTEA ボタニカルピュアオイル" class="hero-image-photo" />
       <div class="hero-scroll">Scroll</div>
     </div>
   </section>
@@ -1776,7 +1823,7 @@
     <div class="problem-inner">
       <p class="problem-intro fade-in">
         高ければいい<br />
-        というのじゃない
+        という訳ではない
       </p>
       <div class="problem-list">
         <div class="problem-item fade-in">
@@ -1807,6 +1854,7 @@
     <div class="why-inner">
       <span class="section-label fade-in">Why PROTEA</span>
       <h2 class="section-title fade-in">プロテアはなぜ、<br />べたつかないのか。</h2>
+      <img src="images/131A1988.jpg" alt="オイルが軽やかに肌になじむ様子" class="why-hero-img fade-in" />
       <div class="why-blocks">
         <div class="why-block fade-in">
           <span class="why-block-label">Reason 01 / Formulation</span>
@@ -1894,7 +1942,7 @@
   <section id="product-intro">
     <div class="container">
       <div class="product-intro-grid">
-        <div class="product-img-placeholder fade-in"><svg viewBox="0 0 24 24" style="width:32px;height:32px;stroke:var(--gold-light);fill:none;stroke-width:1;opacity:0.8;"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>PRODUCT IMAGE</div>
+        <img src="images/S__117039134.jpg" alt="PROTEA ボタニカルピュアオイル 商品写真" class="product-img-photo fade-in" />
         <div class="product-intro-content fade-in fade-in-delay-1">
           <span class="section-label">About PROTEA</span>
           <p class="product-intro-name">PROTEA</p>
@@ -1972,9 +2020,8 @@
 
         <!-- デイリーケア -->
         <div class="how-card fade-in">
-          <!-- 📷 写真を差し替える場合: <div class="how-card-photo-placeholder"> を削除し、<img src="画像パス" alt="説明"> を追加 -->
           <div class="how-card-photo">
-            <div class="how-card-photo-placeholder"><svg viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>PHOTO — DAILY CARE</div>
+            <img src="images/131A1870.jpg" alt="デイリーケアでオイルをなじませる様子" />
           </div>
           <div class="how-card-top">
             <div class="how-card-icon">
@@ -1995,9 +2042,8 @@
 
         <!-- ブースター -->
         <div class="how-card fade-in fade-in-delay-1">
-          <!-- 📷 写真を差し替える場合: <div class="how-card-photo-placeholder"> を削除し、<img src="画像パス" alt="説明"> を追加 -->
           <div class="how-card-photo">
-            <div class="how-card-photo-placeholder"><svg viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>PHOTO — BOOSTER</div>
+            <img src="images/131A1859.jpg" alt="ブースターとしてオイルを1〜2滴使う様子" />
           </div>
           <div class="how-card-top">
             <div class="how-card-icon">
@@ -2024,9 +2070,8 @@
 
         <!-- スペシャルケア -->
         <div class="how-card fade-in">
-          <!-- 📷 写真を差し替える場合: <div class="how-card-photo-placeholder"> を削除し、<img src="画像パス" alt="説明"> を追加 -->
           <div class="how-card-photo">
-            <div class="how-card-photo-placeholder"><svg viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>PHOTO — SPECIAL CARE</div>
+            <img src="images/131A1933.jpg" alt="スペシャルケア・オイルマッサージの様子" />
           </div>
           <div class="how-card-top">
             <div class="how-card-icon">
@@ -2048,9 +2093,8 @@
 
         <!-- ヘアケア -->
         <div class="how-card fade-in fade-in-delay-1">
-          <!-- 📷 写真を差し替える場合: <div class="how-card-photo-placeholder"> を削除し、<img src="画像パス" alt="説明"> を追加 -->
           <div class="how-card-photo">
-            <div class="how-card-photo-placeholder"><svg viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>PHOTO — HAIR CARE</div>
+            <img src="images/131A1971.jpg" alt="ヘアケアでオイルを髪になじませる様子" />
           </div>
           <div class="how-card-top">
             <div class="how-card-icon">
@@ -2071,9 +2115,8 @@
 
         <!-- ボディケア -->
         <div class="how-card fade-in">
-          <!-- 📷 写真を差し替える場合: <div class="how-card-photo-placeholder"> を削除し、<img src="画像パス" alt="説明"> を追加 -->
           <div class="how-card-photo">
-            <div class="how-card-photo-placeholder"><svg viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>PHOTO — BODY CARE</div>
+            <img src="images/131A1787.jpg" alt="ボディケアでオイルを脚になじませる様子" />
           </div>
           <div class="how-card-top">
             <div class="how-card-icon">
@@ -2094,9 +2137,8 @@
 
         <!-- ハンドケア・ネイルケア -->
         <div class="how-card fade-in fade-in-delay-1">
-          <!-- 📷 写真を差し替える場合: <div class="how-card-photo-placeholder"> を削除し、<img src="画像パス" alt="説明"> を追加 -->
           <div class="how-card-photo">
-            <div class="how-card-photo-placeholder"><svg viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>PHOTO — HAND & NAIL</div>
+            <img src="images/IMG_6116.jpg" alt="ハンドケア・ネイルケアでオイルを手になじませる様子" />
           </div>
           <div class="how-card-top">
             <div class="how-card-icon">
@@ -2141,7 +2183,7 @@
           </div>
           <a href="https://proteaoil.stores.jp/" target="_blank" rel="noopener noreferrer" class="btn-primary" style="background:var(--gold); border-color:var(--gold);">新商品を購入する</a>
         </div>
-        <div class="new-product-img fade-in fade-in-delay-1"><svg viewBox="0 0 24 24" style="width:32px;height:32px;stroke:rgba(255,255,255,0.35);fill:none;stroke-width:1;"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>NEW PRODUCT IMAGE</div>
+        <img src="images/5Z2A9352.jpg" alt="PROTEA グレープフルーツの香り 新パッケージ" class="new-product-img fade-in fade-in-delay-1" />
       </div>
     </div>
   </section>
@@ -2187,7 +2229,7 @@
   <section id="brand-story">
     <div class="container">
       <div class="story-grid">
-        <div class="story-img fade-in"><svg viewBox="0 0 24 24" style="width:32px;height:32px;stroke:var(--gold-light);fill:none;stroke-width:1;opacity:0.8;"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>BRAND IMAGE</div>
+        <img src="images/131A1313.jpg" alt="PROTEA ブランドストーリー" class="story-img fade-in" />
         <div class="story-content fade-in fade-in-delay-1">
           <span class="section-label">Brand Story</span>
           <h2 class="section-title" style="text-wrap: balance;">眠れない夜が、ずっと続いてた。それでも、自分を諦めたくなかった。</h2>
@@ -2247,6 +2289,7 @@
       <p class="section-subtitle fade-in">
         植物由来100%の処方だから、<br />ライフステージを問わず、家族みんなで使えます。
       </p>
+      <img src="images/131A1745.jpg" alt="一本で、あらゆる場面へ" class="multi-use-image fade-in" />
       <div class="multi-list">
 
         <div class="multi-row fade-in">
