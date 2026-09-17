@@ -2470,25 +2470,25 @@
         <p class="cta-product-volume">Botanical Pure Oil / 100ml</p>
         <div class="cta-pricing-wrap fade-in">
           <!-- 定期便 (強調) -->
-          <div class="cta-plan cta-plan-subscription">
+          <div class="cta-plan cta-plan-subscription" id="cta-plan-subscription">
             <div class="cta-plan-badge">✦ いちばん人気</div>
             <p class="cta-plan-label">定期便</p>
-            <p class="cta-plan-price">¥7,000<span style="font-size:0.68rem; color:var(--text-light); margin-left:0.2rem;">（税込）</span></p>
-            <p class="cta-plan-saving">通常購入より ¥700 お得</p>
-            <a href="https://proteaoil.stores.jp/" target="_blank" rel="noopener noreferrer" class="btn-primary-cta">定期便で購入する</a>
+            <p class="cta-plan-price" id="cta-price-subscription">¥7,000<span style="font-size:0.68rem; color:var(--text-light); margin-left:0.2rem;">（税込）</span></p>
+            <p class="cta-plan-saving" id="cta-saving-note">通常購入より ¥700 お得</p>
+            <a href="https://proteaoil.stores.jp/" target="_blank" rel="noopener noreferrer" class="btn-primary-cta" id="cta-btn-subscription">定期便で購入する</a>
             <p class="cta-plan-cancel-note">いつでも解約できます</p>
           </div>
           <!-- 通常購入 (サブ) -->
-          <div class="cta-plan cta-plan-single">
+          <div class="cta-plan cta-plan-single" id="cta-plan-single">
             <p class="cta-plan-label">通常購入</p>
-            <p class="cta-plan-price">¥7,700<span style="font-size:0.68rem; color:var(--text-light); margin-left:0.2rem;">（税込）</span></p>
+            <p class="cta-plan-price" id="cta-price-single">¥7,700<span style="font-size:0.68rem; color:var(--text-light); margin-left:0.2rem;">（税込）</span></p>
             <p style="font-size:0.7rem; color:var(--text-light); margin-bottom:1.5rem; letter-spacing:0.05em;">まずは1本からお試し</p>
-            <a href="https://proteaoil.stores.jp/" target="_blank" rel="noopener noreferrer" class="btn-outline-cta">通常購入はこちら</a>
+            <a href="https://proteaoil.stores.jp/" target="_blank" rel="noopener noreferrer" class="btn-outline-cta" id="cta-btn-single">通常購入はこちら</a>
           </div>
         </div>
         <p style="font-size:0.68rem; color:var(--text-light); text-align:center; margin-top:1.2rem; letter-spacing:0.04em;">※ どちらのボタンも購入ページへ移動します。ご購入時にプランをお選びください。</p>
         <div class="cta-notes" style="margin-top:1.5rem;">
-          <p>✦ 香り：ベルガモット / グレープフルーツ（NEW）よりお選びください</p>
+          <p id="cta-scent-status">✦ 香り：ベルガモット / グレープフルーツ（NEW）よりお選びください</p>
           <p>✦ 現在 <strong style="color:var(--green-mid); font-weight:500;">通常販売中</strong>（ご注文後、順次発送いたします）</p>
           <p>✦ 送料全国一律</p>
           <p>✦ 公式LINEご登録でクーポンコードをプレゼント</p>
@@ -2655,6 +2655,112 @@
         header.style.boxShadow = 'none';
       }
     });
+  </script>
+
+  <script>
+    // ===== LIVE STORES PRICE / STOCK SYNC =====
+    // Fetches /api/stores-status (a Vercel serverless function that reads
+    // the live proteaoil.stores.jp page) and overwrites the static
+    // price/stock text below with current values. If the request fails,
+    // or STORES changes their markup and nothing can be parsed, this
+    // silently leaves the static fallback text already in the page as-is.
+    (function () {
+      function yen(n) { return '¥' + n.toLocaleString('ja-JP'); }
+
+      function classify(name) {
+        return {
+          subscription: name.indexOf('定期便') !== -1,
+          is150: name.indexOf('150ml') !== -1,
+          grapefruit: name.indexOf('グレープフルーツ') !== -1,
+          bergamot: name.indexOf('ベルガモット') !== -1
+        };
+      }
+
+      function pickForCard(items, wantSubscription) {
+        var candidates = items.filter(function (it) {
+          var c = classify(it.name);
+          return c.subscription === wantSubscription && !c.is150;
+        });
+        if (candidates.length === 0) return null;
+        var inStock = candidates.filter(function (it) { return !it.soldOut && it.price != null; });
+        if (inStock.length === 0) return { soldOut: true, price: null };
+        var preferred = inStock.filter(function (it) { return classify(it.name).grapefruit; })[0] || inStock[0];
+        return { soldOut: false, price: preferred.price };
+      }
+
+      function scentStatusText(items) {
+        var scents = [
+          { label: 'グレープフルーツ（NEW）', test: function (c) { return c.grapefruit; } },
+          { label: 'ベルガモット', test: function (c) { return c.bergamot; } }
+        ];
+        var parts = scents.map(function (s) {
+          var matches = items.filter(function (it) {
+            var c = classify(it.name);
+            return !c.is150 && s.test(c);
+          });
+          var inStock = matches.some(function (it) { return !it.soldOut; });
+          return s.label + (inStock ? '' : '（在庫切れ）');
+        });
+        return '✦ 香り：' + parts.join(' / ') + 'よりお選びください';
+      }
+
+      function renderPrice(el, result) {
+        if (!el || !result) return;
+        if (result.soldOut || result.price == null) {
+          el.innerHTML = 'SOLD OUT';
+          return;
+        }
+        el.innerHTML = yen(result.price) + '<span style="font-size:0.68rem; color:var(--text-light); margin-left:0.2rem;">（税込）</span>';
+      }
+
+      fetch('/api/stores-status')
+        .then(function (r) { return r.json(); })
+        .then(function (data) {
+          var items = data && data.items;
+          if (!items || items.length === 0) return;
+
+          var sub = pickForCard(items, true);
+          var single = pickForCard(items, false);
+
+          var priceSubEl = document.getElementById('cta-price-subscription');
+          var priceSingleEl = document.getElementById('cta-price-single');
+          var savingEl = document.getElementById('cta-saving-note');
+          var scentEl = document.getElementById('cta-scent-status');
+          var btnSub = document.getElementById('cta-btn-subscription');
+          var btnSingle = document.getElementById('cta-btn-single');
+
+          renderPrice(priceSubEl, sub);
+          renderPrice(priceSingleEl, single);
+
+          if (sub && sub.soldOut && btnSub) {
+            btnSub.textContent = '只今売り切れ中';
+            btnSub.style.pointerEvents = 'none';
+            btnSub.style.opacity = '0.5';
+          }
+          if (single && single.soldOut && btnSingle) {
+            btnSingle.textContent = '只今売り切れ中';
+            btnSingle.style.pointerEvents = 'none';
+            btnSingle.style.opacity = '0.5';
+          }
+
+          if (savingEl) {
+            if (sub && single && !sub.soldOut && !single.soldOut && sub.price != null && single.price != null) {
+              var diff = single.price - sub.price;
+              savingEl.textContent = diff > 0 ? ('通常購入より ' + yen(diff) + ' お得') : '';
+            } else {
+              savingEl.textContent = '';
+            }
+          }
+
+          if (scentEl) {
+            scentEl.textContent = scentStatusText(items);
+          }
+        })
+        .catch(function () {
+          // Network error, or /api/stores-status not deployed yet:
+          // keep whatever static text is already in the page.
+        });
+    })();
   </script>
 </body>
 </html>
