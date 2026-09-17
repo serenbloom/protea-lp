@@ -47,7 +47,13 @@ module.exports = async (req, res) => {
 
   try {
     const upstream = await fetch(STORES_URL, {
-      headers: { "User-Agent": "Mozilla/5.0 (compatible; ProteaLPBot/1.0)" },
+      headers: {
+        "User-Agent":
+          "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36",
+        Accept:
+          "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8",
+        "Accept-Language": "ja,en-US;q=0.9,en;q=0.8",
+      },
     });
     if (!upstream.ok) {
       throw new Error(`STORES responded ${upstream.status}`);
