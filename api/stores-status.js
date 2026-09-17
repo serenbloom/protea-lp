@@ -56,7 +56,10 @@ module.exports = async (req, res) => {
       },
     });
     if (!upstream.ok) {
-      throw new Error(`STORES responded ${upstream.status}`);
+      const bodySnippet = (await upstream.text()).slice(0, 300);
+      throw new Error(
+        `STORES responded ${upstream.status}: ${bodySnippet}`
+      );
     }
     const html = await upstream.text();
     const items = parseItems(html);
