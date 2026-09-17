@@ -56,7 +56,9 @@ module.exports = async (req, res) => {
       },
     });
     if (!upstream.ok) {
-      const bodySnippet = (await upstream.text()).slice(0, 300);
+      const fullBody = await upstream.text();
+      const bodySnippet =
+        fullBody.replace(/<style>[\s\S]*?<\/style>/gi, "<style>...</style>").slice(0, 1200);
       throw new Error(
         `STORES responded ${upstream.status}: ${bodySnippet}`
       );
