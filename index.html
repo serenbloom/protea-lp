@@ -1498,6 +1498,34 @@
       line-height: 2;
       margin-bottom: 1.2rem;
     }
+    .hero-power-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.9rem;
+    }
+    .hero-power-list li {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      gap: 0.4rem;
+      line-height: 1.7;
+    }
+    .hero-power-list li::before {
+      content: '◦';
+      color: var(--gold);
+      margin-right: 0.2rem;
+    }
+    .hero-power-main {
+      font-size: 0.9rem;
+      color: var(--green-deep);
+      font-weight: 500;
+    }
+    .hero-power-note {
+      font-size: 0.76rem;
+      color: var(--text-light);
+      letter-spacing: 0.02em;
+    }
 
     /* ===== WHY NO STICKY SECTION ===== */
     #why-no-sticky {
@@ -1564,6 +1592,46 @@
     }
     @media (max-width: 640px) {
       .why-blocks { grid-template-columns: 1fr; gap: 1.5rem; }
+    }
+
+    /* ===== WHY OIL SECTION ===== */
+    #why-oil {
+      padding: 8rem 0;
+      background: var(--cream-light);
+    }
+    .why-oil-inner {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 0 2rem;
+      text-align: center;
+    }
+    .why-oil-body {
+      text-align: left;
+      font-size: 0.92rem;
+      color: var(--text-mid);
+      line-height: 2.1;
+      margin-top: 2.5rem;
+    }
+    .why-oil-body p { margin-bottom: 1.4rem; }
+    .why-oil-body p:last-child { margin-bottom: 0; }
+    .skin-diagram {
+      margin: 3.5rem auto;
+      max-width: 560px;
+      padding: 2.5rem 2rem 2rem;
+      background: var(--white);
+      border: 1px solid var(--border);
+    }
+    .skin-diagram svg { display: block; width: 100%; height: auto; }
+    .skin-diagram-caption {
+      margin-top: 1.5rem;
+      font-size: 0.8rem;
+      color: var(--text-light);
+      line-height: 1.9;
+      text-align: left;
+    }
+    @media (max-width: 640px) {
+      #why-oil { padding: 5rem 0; }
+      .why-oil-inner { padding: 0 1.5rem; }
     }
 
     /* ===== PROBLEM BETATSUKI ===== */
@@ -1794,17 +1862,23 @@
     <div class="hero-content">
       <span class="hero-badge">Plant Oil Beauty — Since 2024</span>
       <h1 class="hero-title">
-        潤いの鍵は水分じゃない。<br />
-        大切なのは、<br />
-        それを<em>閉じ込める</em>オイル。
+        うるおいの鍵は、<br />
+        水分じゃない。<br />
+        <em>肌力</em>。
       </h1>
-      <p class="hero-sub-copy">しっかりうるおう水分と、たっぷりのオイル。</p>
+      <p class="hero-sub-copy">うるおいを抱え込めるかどうかは、水分の量よりも、肌自身の力しだい。</p>
       <p class="hero-title-2">
-        肌には<em>新鮮な</em>オイルが<em>たっぷり</em>必要だった。
+        だからこそ、<em>肌本来の力</em>を育てるために<em>新鮮な</em>オイルを選んでほしい。
       </p>
-      <div class="hero-betatsuki">
-        <p class="hero-betatsuki-title">たっぷり使ってもべたつかないオイル？</p>
-        <p class="hero-betatsuki-body">べたつきの正体は、量じゃない。オイルの性質と、鮮度。<br />重いオイル・軽いオイルがあり、酸化が進むほど感触も変わる。<br />べたつかない理由は、ひとつじゃない。オイルの設計と、鮮度。両方にこだわった。</p>
+      <div class="hero-betatsuki hero-power-block">
+        <p class="hero-betatsuki-title">「肌力」が整うと、こんなサポートが期待できます</p>
+        <ul class="hero-power-list">
+          <li><span class="hero-power-main">うるおいへのなじみの早さをサポート</span><span class="hero-power-note">（使い始めてすぐに、なじみを感じやすく）</span></li>
+          <li><span class="hero-power-main">乾いてこわばった肌に、しなやかさを</span><span class="hero-power-note">（肌の柔軟性を引き出すサポート）</span></li>
+          <li><span class="hero-power-main">美容成分がなじみやすい肌に整える</span><span class="hero-power-note">（角層に美容成分がなじみやすいコンディションへ）</span></li>
+          <li><span class="hero-power-main">うるおいを逃しにくい肌へ</span><span class="hero-power-note">（せっかくのうるおいをキープしやすく）</span></li>
+          <li><span class="hero-power-main">肌力が土台になければ、なじみにくい</span><span class="hero-power-note">（まずは肌自身が受け取る力を整えることから）</span></li>
+        </ul>
       </div>
       <div class="hero-actions">
         <a href="https://proteaoil.stores.jp/" target="_blank" rel="noopener noreferrer" class="btn-primary">今すぐ購入する</a>
@@ -1813,7 +1887,9 @@
       </div>
     </div>
     <div class="hero-image">
-      <img src="images/S__117039139.jpg" alt="PROTEA ボタニカルピュアオイル" class="hero-image-photo" />
+      <video class="hero-image-photo" autoplay muted loop playsinline poster="images/hero-video-poster.jpg">
+        <source src="images/hero-video.mp4" type="video/mp4" />
+      </video>
       <div class="hero-scroll">Scroll</div>
     </div>
   </section>
@@ -2245,6 +2321,46 @@
   </section>
 
 
+  <!-- ===== WHY OIL SECTION ===== -->
+  <section id="why-oil">
+    <div class="container">
+      <div class="why-oil-inner">
+        <span class="section-label fade-in">Why Oil</span>
+        <h2 class="section-title fade-in">なぜ、今オイルを選ぶのか。</h2>
+        <div class="why-oil-body fade-in">
+          <p>夏の肌は、思っている以上に消耗しています。紫外線、冷房による乾燥、汗と皮脂のバランスの乱れ——気づかないうちに、肌はたくさんのストレスを受けています。</p>
+          <p>そして迎える秋口。季節の変わり目は、肌の皮脂やうるおいの分泌量が自然と落ち着きやすいタイミングだと言われています。</p>
+          <p>冷暖房による乾燥、くすみ、たるみ、毛穴の目立ちなど。肌のお悩みは一つひとつ違って見えても、たどっていくと「代謝」や「うるおい」という、肌にとっての土台部分に行き着くことが多いと言われています。</p>
+        </div>
+
+        <div class="skin-diagram fade-in">
+          <svg viewBox="0 0 640 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="skinDiagramTitle">
+            <title id="skinDiagramTitle">皮膚の構造(表皮・真皮・皮下組織)とオイルがなじむ範囲の図解</title>
+            <rect x="60" y="60" width="340" height="35" fill="#F1E4CB" stroke="#2B3D2C" stroke-width="1"/>
+            <rect x="60" y="95" width="340" height="85" fill="#C9DCC9" stroke="#2B3D2C" stroke-width="1"/>
+            <rect x="60" y="180" width="340" height="70" fill="#8FA890" stroke="#2B3D2C" stroke-width="1"/>
+            <path d="M150 14 C150 14 166 34 166 44 C166 52.84 158.84 60 150 60 C141.16 60 134 52.84 134 44 C134 34 150 14 150 14 Z" fill="#C9A87A"/>
+            <line x1="150" y1="60" x2="150" y2="91" stroke="#C9A87A" stroke-width="2" stroke-dasharray="4,3"/>
+            <path d="M144 86 L150 94 L156 86" fill="none" stroke="#C9A87A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <line x1="400" y1="77" x2="440" y2="77" stroke="#8A8A82" stroke-width="1"/>
+            <text x="446" y="82" font-family="'Noto Serif JP', serif" font-size="16" fill="#2B3D2C">表皮（角層）</text>
+            <line x1="400" y1="137" x2="440" y2="137" stroke="#8A8A82" stroke-width="1"/>
+            <text x="446" y="142" font-family="'Noto Serif JP', serif" font-size="16" fill="#2B3D2C">真皮</text>
+            <line x1="400" y1="215" x2="440" y2="215" stroke="#8A8A82" stroke-width="1"/>
+            <text x="446" y="220" font-family="'Noto Serif JP', serif" font-size="16" fill="#2B3D2C">皮下組織</text>
+          </svg>
+          <p class="skin-diagram-caption">オイルは主に、肌のいちばん外側にある「表皮（角層）」になじみやすいよう働きかけるアイテムです。うるおいや美容成分が、角層になじみやすいコンディションを整えるサポートをします。</p>
+        </div>
+
+        <div class="why-oil-body fade-in">
+          <p>土台となる代謝やうるおいが、肌の表面（角層）になじみやすい状態を整えるために活用されているのが、オイルという選択肢です。</p>
+          <p>PROTEAは、複数の植物オイルをブレンドすることで、ビタミン様の栄養や、オイル自体が酸化しにくい設計など、いくつもの働きを一本に重ねています。だからこそ、季節の変わり目のケアにも、日々のうるおいケアにも選んでいただいています。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
   <!-- ===== VALUE / COST SECTION ===== -->
   <section id="value">
     <div class="value-inner">
@@ -2373,7 +2489,7 @@
         <p style="font-size:0.68rem; color:var(--text-light); text-align:center; margin-top:1.2rem; letter-spacing:0.04em;">※ どちらのボタンも購入ページへ移動します。ご購入時にプランをお選びください。</p>
         <div class="cta-notes" style="margin-top:1.5rem;">
           <p>✦ 香り：ベルガモット / グレープフルーツ（NEW）よりお選びください</p>
-          <p>✦ 現在 <strong style="color:var(--green-mid); font-weight:500;">予約販売中</strong>（発送準備が整い次第お届け）</p>
+          <p>✦ 現在 <strong style="color:var(--green-mid); font-weight:500;">通常販売中</strong>（ご注文後、順次発送いたします）</p>
           <p>✦ 送料全国一律</p>
           <p>✦ 公式LINEご登録でクーポンコードをプレゼント</p>
         </div>
